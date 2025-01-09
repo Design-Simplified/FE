@@ -14,7 +14,7 @@ export default function FormSandbox() {
         <Typography
           as="h1"
           variant="h3"
-          font="Inter"
+          font="Lora"
           weight="bold"
           className="text-gray-900"
         >

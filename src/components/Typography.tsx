@@ -13,19 +13,14 @@ export enum TypographyVariant {
 }
 
 enum FontVariant {
-  Inter,
+  Lora,
 }
 
-enum FontWeight {
-  thin,
-  extralight,
-  light,
-  regular,
-  medium,
-  semibold,
-  bold,
-  extrabold,
-  black,
+export enum FontWeight {
+  regular, // 400
+  medium, // 500
+  semibold, // 600
+  bold, // 700
 }
 
 type TypographyProps<T extends React.ElementType> = {
@@ -34,6 +29,7 @@ type TypographyProps<T extends React.ElementType> = {
   weight?: keyof typeof FontWeight;
   font?: keyof typeof FontVariant;
   variant?: keyof typeof TypographyVariant;
+  italic?: boolean; // New: Option to use italic style
   children: React.ReactNode;
 };
 
@@ -42,8 +38,9 @@ export default function Typography<T extends React.ElementType>({
   children,
   weight = "regular",
   className,
-  font = "Inter",
+  font = "Lora",
   variant = "p",
+  italic = false, // Default to non-italic
   ...props
 }: TypographyProps<T> &
   Omit<React.ComponentProps<T>, keyof TypographyProps<T>>) {
@@ -54,13 +51,13 @@ export default function Typography<T extends React.ElementType>({
         // *=============== Font Type ==================
         "text-black",
         [
-          font === "Inter" && [
-            "font-inter",
-            [
-              weight === "regular" && "font-normal",
-              weight === "medium" && "font-medium",
-              weight === "bold" && "font-bold",
-            ],
+          font === "Lora" && [
+            "font-lora",
+            italic && "italic", // Apply italic if true
+            weight === "regular" && "font-normal",
+            weight === "medium" && "font-medium",
+            weight === "semibold" && "font-semibold",
+            weight === "bold" && "font-bold",
           ],
         ],
         // *=============== Font Variants ==================

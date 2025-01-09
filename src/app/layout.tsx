@@ -1,11 +1,26 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lora } from "next/font/google";
 
 import Providers from "@/app/providers";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const lora = Lora({
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "vietnamese"],
+  weight: [
+    "400", // Regular
+    "500", // Medium
+    "600", // Semi-Bold
+    "700", // Bold
+  ],
+  style: [
+    "normal", // Normal style
+    "italic", // Italic style
+  ],
+  display: "swap", // Display fallback setting
+  preload: true, // Preloads the font
+  variable: "--font-lora", // Custom CSS variable for font
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lora.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
