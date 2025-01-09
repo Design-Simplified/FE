@@ -1,10 +1,11 @@
 {
-  "name": "next-template",
+  "name": "fe-design-simplified",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "fix": "pnpm run lint:write && pnpm run format:write",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "biome lint .",

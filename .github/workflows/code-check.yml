@@ -28,6 +28,9 @@ jobs:
       - name: 📥 Download deps
         run: pnpm install --frozen-lockfile
 
+      - name: 🔧 Auto Fix Linting
+        run: pnpm run fix
+
       - name: 🔬 Biome Check
         run: pnpm run check
 
