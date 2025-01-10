@@ -11,6 +11,7 @@ const ButtonVariant = [
   "red",
   "outline",
   "ghost",
+  "grey",
 ] as const;
 const ButtonSize = ["sm", "base", "lg"] as const;
 
@@ -112,6 +113,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "text-neutral-500",
               "shadow-none",
               "hover:bg-neutral-50 focus-visible:ring-neutral-400 active:bg-neutral-100 disabled:bg-neutral-100",
+            ],
+            variant === "grey" && [
+              "bg-[#D9D9D9B2] text-black",
+              "hover:bg-gray-100 hover:text-black/50",
+              "active:bg-gray-700",
+              "disabled:bg-gray-700",
+              "focus-visible:ring-gray-400",
             ],
           ],
           //#endregion  //*======== Variants ===========
