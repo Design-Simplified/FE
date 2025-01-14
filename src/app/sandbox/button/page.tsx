@@ -264,18 +264,18 @@ export default function ButtonPage() {
           </Typography>
           <div className="mt-3 flex flex-wrap items-end gap-3">
             <Button
-              variant="red"
+              variant="white"
               size="lg"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
             >
               Red Button
             </Button>
-            <Button variant="red" leftIcon={BiPlus} rightIcon={BsArrowRight}>
+            <Button variant="white" leftIcon={BiPlus} rightIcon={BsArrowRight}>
               Red Button
             </Button>
             <Button
-              variant="red"
+              variant="white"
               size="sm"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
@@ -285,7 +285,7 @@ export default function ButtonPage() {
           </div>
           <div className="mt-3 flex flex-wrap items-end gap-3">
             <Button
-              variant="red"
+              variant="white"
               size="lg"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
@@ -294,7 +294,7 @@ export default function ButtonPage() {
               Red Disabled
             </Button>
             <Button
-              variant="red"
+              variant="white"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
               disabled
@@ -302,7 +302,7 @@ export default function ButtonPage() {
               Red Disabled
             </Button>
             <Button
-              variant="red"
+              variant="white"
               size="sm"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
@@ -313,7 +313,7 @@ export default function ButtonPage() {
           </div>
           <div className="mt-3 flex flex-wrap items-end gap-3">
             <Button
-              variant="red"
+              variant="white"
               size="lg"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
@@ -322,7 +322,7 @@ export default function ButtonPage() {
               Red Disabled
             </Button>
             <Button
-              variant="red"
+              variant="white"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
               isLoading
@@ -330,7 +330,7 @@ export default function ButtonPage() {
               Red Disabled
             </Button>
             <Button
-              variant="red"
+              variant="white"
               size="sm"
               leftIcon={BiPlus}
               rightIcon={BsArrowRight}
