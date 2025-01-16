@@ -178,7 +178,7 @@ const NavDesktop: React.FC = () => {
           <Typography
             font="Lora"
             weight="bold"
-            className="text-white md:text-xl"
+            className="text-white sm:text-xl md:text-xl relative top-1"
           >
             DESIGN SIMPLIFIED
           </Typography>
@@ -236,7 +236,7 @@ const NavDesktop: React.FC = () => {
                   <NavigationMenuTrigger>
                     <Typography
                       font="Lora"
-                      weight="semibold"
+                      weight="medium"
                       className="text-white lg:text-xl"
                     >
                       {item}
