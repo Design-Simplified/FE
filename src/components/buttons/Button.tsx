@@ -8,7 +8,7 @@ const ButtonVariant = [
   "blue",
   "green",
   "yellow",
-  "red",
+  "white",
   "outline",
   "ghost",
   "grey",
@@ -88,13 +88,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "disabled:bg-green-700",
               "focus-visible:ring-green-400",
             ],
-            variant === "red" && [
-              "bg-red-500 text-white",
-              "border border-red-600",
-              "hover:bg-red-600 hover:text-white",
-              "active:bg-red-700",
-              "disabled:bg-red-700",
-              "focus-visible:ring-red-400",
+            variant === "white" && [
+              "bg-white text-[#525B44]",
+              "hover:bg-slate-300 hover:text-[#687357]",
+              "active:bg-slate-400",
+              "disabled:bg-slate-400",
+              "focus-visible:ring-slate-500",
             ],
             variant === "yellow" && [
               "bg-yellow-500 text-white",
@@ -105,9 +104,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "focus-visible:ring-yellow-400",
             ],
             variant === "outline" && [
-              "text-black",
-              "border border-gray-300",
-              "hover:bg-slate-200 focus-visible:ring-gray-400 active:bg-slate-500 disabled:bg-slate-500",
+              "text-white",
+              "border border-white",
+              "hover:bg-inherit/80 focus-visible:ring-gray-400 active:bg-slate-500 disabled:bg-slate-500",
             ],
             variant === "ghost" && [
               "text-neutral-500",
