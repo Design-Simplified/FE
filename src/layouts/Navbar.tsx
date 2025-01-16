@@ -50,7 +50,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
               <AccordionTrigger className="text-white">
                 <Typography
                   font="Lora"
-                  weight="semibold"
+                  weight="medium"
                   className="text-xl text-white"
                 >
                   {item}
