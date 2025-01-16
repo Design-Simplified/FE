@@ -28,39 +28,45 @@ const buttonVariantObject = {
 export default function SignInPage() {
   return (
     <Layout withFooter={false} withNavbar={false}>
-      <main className="bg-[url('/images/auth/backgroundMobile.png')] bg-cover bg-center w-full m-0 flex min-h-screen items-center justify-center gap-4 p-2 lg:flex-row lg:px-8 lg:py-5">
-        <div className="flex flex-col min-h-[600px] w-[90%] lg:w-[50%] md:w-[70%] md:min-h-[85vh] sm:min-h-[70vh] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
-          <div className="atas flex flex-col items-center gap-10">
+      <main className="relative bg-none w-full m-0 flex min-h-screen items-center justify-center gap-4 p-2 lg:flex-row lg:px-8 lg:py-12 ">
+        <div className="flex flex-col min-h-[600px] sm:w-[35%] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
+          <div className="atas flex flex-col items-center gap-6">
             <div className="title flex flex-col items-start justify-center w-full lg:gap-2">
               <Typography
                 variant="h1"
-                className="text-xl font-bold lg:text-4xl md:text-3xl sm:text-2xl"
+                className="text-xl font-bold sm:text-3xl md:text-3xl"
               >
                 Sign In
               </Typography>
-              <Typography variant="p" className="text-sm sm:text-base">
+              <Typography
+                variant="p"
+                className="text-sm sm:text-base md:text-base"
+              >
                 To continue buying
               </Typography>
             </div>
-            <div className="signupButton flex flex-col items-start justify-start gap-3 w-full">
+            <div className="signinButton flex flex-col items-start justify-start gap-3 w-full">
               {buttonVariant
                 .filter((variant) => variant !== "user")
                 .map((variant: keyof typeof buttonVariantObject) => (
                   <Button
                     key={variant}
                     variant="grey"
-                    className="flex w-full justify-center items-center  py-4 lg:py-7"
+                    className="flex w-full justify-center items-center py-2 sm:py-4"
                   >
                     <div className="flex justify-center items-center w-fit flex-row gap-2">
                       <NextImage
                         src={buttonVariantObject[variant].icon}
                         width={20}
                         height={20}
-                        className="w-5 h-5"
-                        imgClassName="lg:w-6"
+                        className="w-4 h-4 sm:w-5 sm:h-5"
+                        imgClassName="w-4 h-4 sm:w-5"
                         alt={`${variant} logo`}
                       />
-                      <Typography variant="p" className="text-xs lg:text-lg">
+                      <Typography
+                        variant="p"
+                        className="text-xs sm:text-base md:text-base"
+                      >
                         {buttonVariantObject[variant].text}
                       </Typography>
                     </div>
@@ -70,22 +76,22 @@ export default function SignInPage() {
             <div className="divider flex justify-center items-center gap-3 w-full">
               {/* line, OR, line */}
               <div className="w-full h-0 border border-[#BBBCBF]"></div>
-              <Typography variant="p" className="text-xs lg:text-lg">
+              <Typography variant="p" className="text-xs sm:text-lg md:text-lg">
                 OR
               </Typography>
               <div className="w-full h-0 border border-[#BBBCBF]"></div>
             </div>
             <Button
               variant="grey"
-              className="w-full flex items-center justify-center py-4 lg:py-7"
+              className="flex w-full justify-center items-center py-2 sm:py-4"
             >
               <div className="flex justify-center items-center w-fit flex-row gap-2">
                 <NextImage
                   src={buttonVariantObject.user.icon}
                   width={20}
                   height={20}
-                  className="w-5 h-5"
-                  imgClassName="lg:w-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  imgClassName="w-4 h-4 sm:w-5"
                   alt={`Cart logo`}
                 />
                 <Typography variant="p" className="text-xs lg:text-lg">
@@ -94,18 +100,18 @@ export default function SignInPage() {
               </div>
             </Button>
             {/* Already have an account? Log in Instead + -> icon */}
-            <div className="RegisterInstead flex flex-row items-center justify-center gap-2">
+            <div className="RegisterInstead flex flex-row items-center justify-center gap-1">
               <Typography
                 variant="p"
-                className="text-xs lg:text-lg min-[300px]:text-[9px]"
+                className="text-xs sm:text-base md:text-base min-[300px]:text-[9px]"
               >
                 Don't have an account?
               </Typography>
-              <div className="flex flex-row items-center text-black justify-center gap-1 border-b border-black cursor-pointer hover:border-black/50  hover:text-black/50">
+              <div className="flex flex-row items-center text-black justify-center gap-1 cursor-pointer hover:border-black/50  hover:text-black/50">
                 <Typography
                   variant="p"
                   italic={true}
-                  className="text-xs lg:text-lg font-bold hover:text-black/50 min-[300px]:text-[9px]"
+                  className="text-xs sm:text-base md:text-base font-bold hover:text-black/50 min-[300px]:text-[9px]"
                 >
                   Sign Up Instead
                 </Typography>
@@ -116,19 +122,37 @@ export default function SignInPage() {
           <div className="bawah flex flex-row w-full gap-1 justify-center items-center">
             <Typography
               variant="p"
-              className="text-[9px] min-[300px]:text-[8px] md:text-sm lg:text-xs"
+              className="text-[9px] min-[300px]:text-[8px] sm:text-xs  md:text-xs"
             >
               By continuing, you agree to Design Simplified’s
             </Typography>
             <Typography
               variant="p"
               italic={true}
-              className="text-[9px] min-[300px]:text-[8px] md:text-sm lg:text-xs font-bold hover:text-black/50 underline cursor-pointer"
+              className="text-[9px] min-[300px]:text-[8px] sm:text-xs  md:text-xs font-normal text-black/80 hover:text-black/50 underline cursor-pointer"
             >
               Terms & Policies
             </Typography>
           </div>
         </div>
+        <section className="w-full h-full absolute top-0 bottom-0 right-0 min-h-screen overflow-hidden">
+          <NextImage
+            src="/auth/backgroundDesktop.png"
+            width={1440}
+            height={1024}
+            className="hidden sm:block sm:w-[115%] -z-[100] absolute top-0 bottom-0 right-0"
+            imgClassName="object-cover w-full h-full"
+            alt="Background image for desktop"
+          />
+          <NextImage
+            src="/auth/backgroundMobile.png"
+            width={390}
+            height={840}
+            className="block sm:hidden w-[100%] -z-[100] absolute top-0 bottom-0 left-0"
+            imgClassName="object-cover w-full h-full"
+            alt="Background image for desktop"
+          />
+        </section>
       </main>
     </Layout>
   );
