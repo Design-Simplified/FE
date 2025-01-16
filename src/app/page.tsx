@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <Layout withFooter={false} withNavbar={true}>
-      <main className="pt-20"> halo</main>
+      <main className="pt-20 w-full"> halo</main>
     </Layout>
   );
 }

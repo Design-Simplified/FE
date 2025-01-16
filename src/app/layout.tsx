@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 
 import Providers from "@/app/providers";
+import clsxm from "@/lib/clsxm";
 
 const lora = Lora({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "vietnamese"],
@@ -37,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lora.className}>
+      <body className={clsxm("w-full", lora.className)}>
         <Providers>{children}</Providers>
       </body>
     </html>
