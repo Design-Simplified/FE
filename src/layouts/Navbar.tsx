@@ -63,7 +63,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
                       <UnstyledLink key={index} href={""}>
                         <Typography
                           font="Lora"
-                          weight={index === 0 ? "semibold" : "regular"}
+                          weight="regular"
                           className="text-[#525B44] text-xl hover:font-semibold"
                         >
                           {item}
@@ -248,7 +248,7 @@ const NavDesktop: React.FC = () => {
                         <UnstyledLink key={index} href={""} className="w-max">
                           <Typography
                             font="Lora"
-                            weight={index === 0 ? "semibold" : "regular"}
+                            weight="regular"
                             className="text-white lg:text-xl hover:font-semibold"
                           >
                             {item}

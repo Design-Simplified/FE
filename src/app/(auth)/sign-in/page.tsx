@@ -94,7 +94,10 @@ export default function SignInPage() {
                   imgClassName="w-4 h-4 sm:w-5"
                   alt={`Cart logo`}
                 />
-                <Typography variant="p" className="text-xs lg:text-lg">
+                <Typography
+                  variant="p"
+                  className="text-xs sm:text-base md:text-base"
+                >
                   {buttonVariantObject.user.text}
                 </Typography>
               </div>
