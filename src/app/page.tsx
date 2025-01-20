@@ -1,5 +1,4 @@
 import Layout from "@/layouts/Layout";
-import Image from "next/image";
 import FirstSection from "./(LandingPage)/_components/LandingPage/FirstSection";
 import SecondSection from "./(LandingPage)/_components/LandingPage/SecondSection";
 import NextImage from "@/components/NextImage";
@@ -10,7 +9,7 @@ import SixthSection from "./(LandingPage)/_components/LandingPage/SixthSection";
 
 export default function Home() {
   return (
-    <Layout withFooter={false} withNavbar={true}>
+    <Layout withFooter={true} withNavbar={true}>
       <main className="w-full">
         <FirstSection />
         <SecondSection />
