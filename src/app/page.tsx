@@ -6,6 +6,7 @@ import NextImage from "@/components/NextImage";
 import ThirdSection from "./(LandingPage)/_components/LandingPage/ThirdSection";
 import FourthSection from "./(LandingPage)/_components/LandingPage/FourthSection";
 import FifthSection from "./(LandingPage)/_components/LandingPage/FifthSection";
+import SixthSection from "./(LandingPage)/_components/LandingPage/SixthSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ThirdSection />
         <FourthSection />
         <FifthSection />
+        <SixthSection />
         <NextImage
           src="/LandingPage/StickyRobot.svg"
           alt="Robot"

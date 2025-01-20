@@ -27,8 +27,8 @@ export default function FifthSection() {
               <AccordionTrigger className="text-black">
                 <Typography
                   font="Lora"
-                  weight="medium"
-                  className="text-xl text-black"
+                  weight="regular"
+                  className="text-sm text-black"
                 >
                   For Buyers - Find it. Customize it
                 </Typography>
@@ -38,7 +38,7 @@ export default function FifthSection() {
                   <Typography
                     font="Lora"
                     weight="regular"
-                    className="text-[#525B44] text-xl hover:font-semibold"
+                    className="text-[#525B44] text-sm hover:font-semibold"
                   >
                     YNTKTS
                   </Typography>
