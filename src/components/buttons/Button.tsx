@@ -81,12 +81,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "focus-visible:ring-blue-400",
             ],
             variant === "green" && [
-              "bg-green-500 text-white",
-              "border border-green-600",
-              "hover:bg-green-600 hover:text-white",
-              "active:bg-green-700",
-              "disabled:bg-green-700",
-              "focus-visible:ring-green-400",
+              "bg-[#525B44] text-white",
+              "border border-[#414834]",
+              "hover:bg-[#414834] hover:text-white",
+              "active:bg-[#373d2b]",
+              "disabled:bg-[#373d2b]",
+              "focus-visible:ring-[#677155]",
             ],
             variant === "white" && [
               "bg-white text-[#525B44]",

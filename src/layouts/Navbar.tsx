@@ -50,7 +50,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
               <AccordionTrigger className="text-white">
                 <Typography
                   font="Lora"
-                  weight="semibold"
+                  weight="medium"
                   className="text-xl text-white"
                 >
                   {item}
@@ -63,7 +63,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
                       <UnstyledLink key={index} href={""}>
                         <Typography
                           font="Lora"
-                          weight={index === 0 ? "semibold" : "regular"}
+                          weight="regular"
                           className="text-[#525B44] text-xl hover:font-semibold"
                         >
                           {item}
@@ -178,7 +178,7 @@ const NavDesktop: React.FC = () => {
           <Typography
             font="Lora"
             weight="bold"
-            className="text-white md:text-xl"
+            className="text-white sm:text-xl md:text-xl relative top-1"
           >
             DESIGN SIMPLIFIED
           </Typography>
@@ -236,7 +236,7 @@ const NavDesktop: React.FC = () => {
                   <NavigationMenuTrigger>
                     <Typography
                       font="Lora"
-                      weight="semibold"
+                      weight="medium"
                       className="text-white lg:text-xl"
                     >
                       {item}
@@ -248,7 +248,7 @@ const NavDesktop: React.FC = () => {
                         <UnstyledLink key={index} href={""} className="w-max">
                           <Typography
                             font="Lora"
-                            weight={index === 0 ? "semibold" : "regular"}
+                            weight="regular"
                             className="text-white lg:text-xl hover:font-semibold"
                           >
                             {item}
