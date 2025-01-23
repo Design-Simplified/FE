@@ -292,7 +292,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <section className="sticky top-0 z-[100] flex sm:flex-col sm:gap-6 min-[664px]:gap-5 w-full justify-between items-center md:justify-center bg-[#525B44] px-4 py-4 lg:px-10 lg:py-6">
+      <section className="sticky top-0 z-[2000] flex sm:flex-col sm:gap-6 min-[664px]:gap-5 w-full justify-between items-center md:justify-center bg-[#525B44] px-4 py-4 lg:px-10 lg:py-6">
         <NavMobile open={open} setOpen={setOpen} className="sm:hidden" />
         <NavDesktop />
       </section>
