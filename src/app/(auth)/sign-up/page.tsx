@@ -33,9 +33,9 @@ export default function SignUpPage() {
     // redirect to api endpoint for buyer
     // https://api.beteam1genics.my.id/api/auth/{provider}/{state}
     //local
-    // const url = `https://api.beteam1genics.my.id/api/auth/local/${provider}/buyer`;
+    // const url = `https://api.beteam1genics.my.id/api/auth/local/${provider}/${user}`;
     const url = `https://api.beteam1genics.my.id/api/auth/${provider}/${user}`;
-    const BuyerWindow = window.open(url, "_blank", "width=600,height=600");
+    const BuyerWindow = window.open(url, "_self");
     if (!BuyerWindow) {
       alert("Please allow popups for this website");
     }
