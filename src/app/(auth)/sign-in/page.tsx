@@ -1,11 +1,13 @@
+"use client";
 import Button from "@/components/buttons/Button";
 import NextImage from "@/components/NextImage";
 import Typography from "@/components/Typography";
 import Layout from "@/layouts/Layout";
+import { useState } from "react";
 import { IoArrowForward } from "react-icons/io5";
 
 // make array for button variant that is google, facebook, apple and user ( user can choose if user are buyer or seller), if user choose buyer, user will be directed to Sign In page, if user choose seller, user will be directed to Sign In page for seller
-const buttonVariant = ["google", "facebook", "apple", "user"] as const;
+const buttonVariant = ["google", "facebook", "buyer", "seller"] as const;
 const buttonVariantObject = {
   google: {
     icon: "/auth/GoogleIcon.svg",
@@ -15,17 +17,34 @@ const buttonVariantObject = {
     icon: "/auth/FacebookIcon.svg",
     text: "Continue with Facebook",
   },
-  apple: {
-    icon: "/auth/AppleIcon.svg",
-    text: "Continue with Apple",
-  },
-  user: {
+
+  buyer: {
     icon: "/auth/CartIcon.svg",
     text: "Continue as a Seller",
+  },
+  seller: {
+    icon: "/auth/CartIcon.svg",
+    text: "Continue as a Buyer",
   },
 };
 
 export default function SignInPage() {
+  const handleLogin = (user: string, provider: string) => {
+    // redirect to api endpoint for buyer
+    // https://api.beteam1genics.my.id/api/auth/{provider}/{state}
+    //local
+    // const url = `https://api.beteam1genics.my.id/api/auth/local/${provider}/buyer`;
+    const url = `https://api.beteam1genics.my.id/api/auth/${provider}/${user}`;
+    const BuyerWindow = window.open(url, "_blank", "width=600,height=600");
+    if (!BuyerWindow) {
+      alert("Please allow popups for this website");
+    }
+    if (BuyerWindow) {
+      BuyerWindow.focus();
+    }
+  };
+
+  const [changeRole, setChangeRole] = useState<boolean>(false);
   return (
     <Layout withFooter={false} withNavbar={false}>
       <main className="relative bg-none w-full m-0 flex min-h-screen items-center justify-center gap-4 p-2 lg:flex-row lg:px-8 lg:py-12 ">
@@ -42,17 +61,22 @@ export default function SignInPage() {
                 variant="p"
                 className="text-sm sm:text-base md:text-base"
               >
-                To continue buying
+                To continue {changeRole ? "Selling" : "Buying"}
               </Typography>
             </div>
             <div className="signinButton flex flex-col items-start justify-start gap-3 w-full">
               {buttonVariant
-                .filter((variant) => variant !== "user")
+                .filter(
+                  (variant) => variant !== "buyer" && variant !== "seller",
+                )
                 .map((variant: keyof typeof buttonVariantObject) => (
                   <Button
                     key={variant}
                     variant="grey"
                     className="flex w-full justify-center items-center py-2 sm:py-4"
+                    onClick={() =>
+                      handleLogin(changeRole ? "seller" : "buyer", variant)
+                    }
                   >
                     <div className="flex justify-center items-center w-fit flex-row gap-2">
                       <NextImage
@@ -83,24 +107,29 @@ export default function SignInPage() {
             </div>
             <Button
               variant="grey"
-              className="flex w-full justify-center items-center py-2 sm:py-4"
+              className="flex w-full justify-center items-center gap-2 py-2 sm:py-4"
+              onClick={() => setChangeRole(!changeRole)}
             >
-              <div className="flex justify-center items-center w-fit flex-row gap-2">
-                <NextImage
-                  src={buttonVariantObject.user.icon}
-                  width={20}
-                  height={20}
-                  className="w-4 h-4 sm:w-5 sm:h-5"
-                  imgClassName="w-4 h-4 sm:w-5"
-                  alt={`Cart logo`}
-                />
-                <Typography
-                  variant="p"
-                  className="text-xs sm:text-base md:text-base"
-                >
-                  {buttonVariantObject.user.text}
-                </Typography>
-              </div>
+              <NextImage
+                src={
+                  changeRole
+                    ? buttonVariantObject.seller.icon
+                    : buttonVariantObject.buyer.icon
+                }
+                width={20}
+                height={20}
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                imgClassName="w-4 h-4 sm:w-5"
+                alt={`Cart logo`}
+              />
+              <Typography
+                variant="p"
+                className="text-xs sm:text-base md:text-base"
+              >
+                {changeRole
+                  ? buttonVariantObject.seller.text
+                  : buttonVariantObject.buyer.text}
+              </Typography>
             </Button>
             {/* Already have an account? Log in Instead + -> icon */}
             <div className="RegisterInstead flex flex-row items-center justify-center gap-1">
@@ -138,7 +167,7 @@ export default function SignInPage() {
             </Typography>
           </div>
         </div>
-        <section className="w-full h-full absolute top-0 bottom-0 right-0 min-h-screen overflow-hidden">
+        <section className="w-full h-full -z-[100] absolute top-0 bottom-0 right-0 min-h-screen overflow-hidden">
           <NextImage
             src="/auth/backgroundDesktop.png"
             width={1440}
