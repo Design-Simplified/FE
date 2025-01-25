@@ -10,7 +10,7 @@ import SixthSection from "./(LandingPage)/_components/LandingPage/SixthSection";
 export default function Home() {
   return (
     <Layout withFooter={true} withNavbar={true}>
-      <main className="w-full">
+      <main className="w-full landing-page">
         <FirstSection />
         <SecondSection />
         <ThirdSection />
@@ -22,7 +22,7 @@ export default function Home() {
           alt="Robot"
           width={80}
           height={80}
-          className="sticky bottom-0 right-0 ml-auto mr-4 mb-4 z-[1000]"
+          className="sticky bottom-0 right-0 ml-auto mr-4 z-[1900] w-20 sm:w-32 sm:mr-8 sm:bottom-4 hover:transform hover:scale-110 transition-transform duration-300"
           imgClassName="object-cover w-full"
         />
       </main>

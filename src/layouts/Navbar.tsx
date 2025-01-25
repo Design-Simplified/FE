@@ -1,7 +1,7 @@
 "use client";
 import Hamburger from "@/components/Hamburger";
 import NextImage from "@/components/NextImage";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -19,6 +19,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/NavMenu";
+import getUser from "@/api/user/getUser";
 
 interface NavMobileMenuProps {
   open: boolean;
@@ -38,7 +39,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
   return (
     <div
       className={clsxm(
-        "absolute flex flex-col justify-between items-center px-4 py-4 z-[90] top-0 pt-20 w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out",
+        "absolute flex flex-col justify-between items-center px-4 py-4 top-0 left-0 pt-20 -z-[100] w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out",
         open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0",
         className,
       )}
@@ -169,7 +170,11 @@ const NavMobile: React.FC<NavMobileProps> = ({ open, setOpen, className }) => {
   );
 };
 
-const NavDesktop: React.FC = () => {
+interface NavDesktopProps {
+  Username: string | null;
+}
+
+const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
   return (
     <>
       <div className="desktopatas hidden sm:flex flex-row justify-between items-center w-full">
@@ -263,25 +268,39 @@ const NavDesktop: React.FC = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex min-[862px]:flex-row sm:flex-col gap-4 justify-center items-center">
-          <UnstyledLink href={""}>
-            <Typography
-              font="Lora"
-              weight="semibold"
-              className="text-white sm:text-xs min-[664px]:text-base lg:text-xl hover:text-slate-200"
-            >
-              Create Account
-            </Typography>
-          </UnstyledLink>
-          <div className="min-[862px]:w-7 h-[0px] min-[862px]:rotate-90 sm:rotate-0 sm:w-24 min-[664px]:w-32 border border-white"></div>
-          <UnstyledLink href={""}>
-            <Typography
-              font="Lora"
-              weight="bold"
-              className="text-white sm:text-xs min-[664px]:text-base lg:text-xl  hover:text-slate-200"
-            >
-              Login
-            </Typography>
-          </UnstyledLink>
+          {Username ? (
+            <>
+              <Typography
+                font="Lora"
+                weight="semibold"
+                className="text-white sm:text-xs md:text-sm lg:text-xl"
+              >
+                Hi, {Username}
+              </Typography>
+            </>
+          ) : (
+            <>
+              <UnstyledLink href={"/sign-up"}>
+                <Typography
+                  font="Lora"
+                  weight="semibold"
+                  className="text-white sm:text-xs min-[664px]:text-base lg:text-xl hover:text-slate-200"
+                >
+                  Create Account
+                </Typography>
+              </UnstyledLink>
+              <div className="min-[862px]:w-7 h-[0px] min-[862px]:rotate-90 sm:rotate-0 sm:w-24 min-[664px]:w-32 border border-white"></div>
+              <UnstyledLink href={"/sign-in"}>
+                <Typography
+                  font="Lora"
+                  weight="bold"
+                  className="text-white sm:text-xs min-[664px]:text-base lg:text-xl  hover:text-slate-200"
+                >
+                  Login
+                </Typography>
+              </UnstyledLink>
+            </>
+          )}
         </div>
       </div>
     </>
@@ -290,13 +309,23 @@ const NavDesktop: React.FC = () => {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { getUserData } = getUser();
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [open]); // use effect untuk mengatur overflow hidden ketika hamburger di klik
+
   return (
     <>
-      <section className="sticky top-0 z-[100] flex sm:flex-col sm:gap-6 min-[664px]:gap-5 w-full justify-between items-center md:justify-center bg-[#525B44] px-4 py-4 lg:px-10 lg:py-6">
+      <section className="sticky top-0 z-[2000] flex sm:flex-col sm:gap-6 min-[664px]:gap-5 w-full justify-between items-center md:justify-center bg-[#525B44] px-4 py-4 lg:px-10 lg:py-6">
         <NavMobile open={open} setOpen={setOpen} className="sm:hidden" />
-        <NavDesktop />
+        <NavDesktop Username={getUserData?.data.username ?? null} />
+        <NavMobileMenu open={open} className="sm:hidden" />
       </section>
-      <NavMobileMenu open={open} className="sm:hidden" />
     </>
   );
 }

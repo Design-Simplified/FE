@@ -14,9 +14,8 @@ export interface PaginatedApiResponse<DataType> {
 }
 
 export type ApiResponse<T> = {
-  message: string;
-  status: boolean;
-  code: number;
+  resultCode: number;
+  resultMessage: string;
   data: T;
 };
 
