@@ -17,10 +17,10 @@ export const api = axios.create({
     "Content-Type": "application/json",
   },
 
-  withCredentials: false,
+  withCredentials: true,
 });
 
-api.defaults.withCredentials = false;
+api.defaults.withCredentials = true;
 const isBrowser = typeof window !== "undefined";
 
 api.interceptors.request.use(function (config) {
@@ -32,7 +32,7 @@ api.interceptors.request.use(function (config) {
         throw "Api Context not found. You must call `setApiContext(context)` before calling api on server-side";
 
       const cookies = new Cookies(context.req?.headers.cookie);
-      token = cookies.get("@sch/token");
+      token = cookies.get("accessToken");
     } else {
       token = getToken();
     }
