@@ -1,12 +1,14 @@
 import NextImage from "@/components/NextImage";
 import Layout from "@/layouts/Layout";
 import FirstSection from "../_components/SellerPage/FirstSection";
+import SecondSection from "../_components/SellerPage/SecondSection";
 
 export default function SellerPage() {
   return (
     <Layout withFooter={true} withNavbar={true}>
       <main className="w-full seller-page">
         <FirstSection />
+        <SecondSection />
         <NextImage
           src="/LandingPage/StickyRobot.svg"
           alt="Robot"
