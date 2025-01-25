@@ -38,7 +38,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({ open, className }) => {
   return (
     <div
       className={clsxm(
-        "absolute flex flex-col justify-between items-center px-4 py-4 z-[90] top-0 pt-20 w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out",
+        "absolute flex flex-col justify-between items-center px-4 py-4 top-0 left-0 pt-20 -z-[100] w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out",
         open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0",
         className,
       )}
@@ -295,8 +295,8 @@ export default function Navbar() {
       <section className="sticky top-0 z-[2000] flex sm:flex-col sm:gap-6 min-[664px]:gap-5 w-full justify-between items-center md:justify-center bg-[#525B44] px-4 py-4 lg:px-10 lg:py-6">
         <NavMobile open={open} setOpen={setOpen} className="sm:hidden" />
         <NavDesktop />
+        <NavMobileMenu open={open} className="sm:hidden" />
       </section>
-      <NavMobileMenu open={open} className="sm:hidden" />
     </>
   );
 }
