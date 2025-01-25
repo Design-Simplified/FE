@@ -15,6 +15,7 @@ export const api = axios.create({
   baseURL,
   headers: {
     "Content-Type": "application/json",
+    credentials: "include",
   },
 
   withCredentials: true,

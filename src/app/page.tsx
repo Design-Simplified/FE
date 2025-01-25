@@ -10,7 +10,7 @@ import SixthSection from "./(LandingPage)/_components/LandingPage/SixthSection";
 export default function Home() {
   return (
     <Layout withFooter={true} withNavbar={true}>
-      <main className="w-full">
+      <main className="w-full landing-page">
         <FirstSection />
         <SecondSection />
         <ThirdSection />
