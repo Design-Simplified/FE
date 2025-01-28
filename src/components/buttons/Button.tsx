@@ -1,6 +1,7 @@
 import * as React from "react";
 import { IconType } from "react-icons";
 import { ImSpinner } from "react-icons/im";
+import { LucideIcon } from "lucide-react";
 
 import clsxm from "@/lib/clsxm";
 
@@ -19,8 +20,8 @@ type ButtonProps = {
   isLoading?: boolean;
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
-  leftIcon?: IconType;
-  rightIcon?: IconType;
+  leftIcon?: IconType | LucideIcon;
+  rightIcon?: IconType | LucideIcon;
   leftIconClassName?: string;
   rightIconClassName?: string;
 } & React.ComponentPropsWithRef<"button">;
