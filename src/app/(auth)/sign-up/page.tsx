@@ -32,9 +32,8 @@ export default function SignUpPage() {
   const handleRegister = (user: string, provider: string) => {
     const url =
       process.env.NEXT_PUBLIC_RUN_MODE === "development"
-        ? process.env.NEXT_PUBLIC_API_URL_DEV +
-          `/auth/local/${provider}/${user}`
-        : process.env.NEXT_PUBLIC_API_URL_PROD + `/auth/${provider}/${user}`;
+        ? process.env.NEXT_PUBLIC_API_URL_DEV + `auth/local/${provider}/${user}`
+        : process.env.NEXT_PUBLIC_API_URL_PROD + `auth/${provider}/${user}`;
     const BuyerWindow = window.open(url, "_self");
     if (!BuyerWindow) {
       alert("Please allow popups for this website");
