@@ -30,11 +30,11 @@ const buttonVariantObject = {
 
 export default function SignInPage() {
   const handleLogin = (user: string, provider: string) => {
-    // redirect to api endpoint for buyer
-    // https://api.beteam1genics.my.id/api/auth/{provider}/{state}
-    //local
-    //const url = `https://api.beteam1genics.my.id/api/auth/local/${provider}/${user}`;
-    const url = `https://api.beteam1genics.my.id/api/auth/${provider}/${user}`;
+    const url =
+      process.env.NEXT_PUBLIC_RUN_MODE === "development"
+        ? process.env.NEXT_PUBLIC_API_URL_DEV +
+          `/auth/local/${provider}/${user}`
+        : process.env.NEXT_PUBLIC_API_URL_PROD + `/auth/${provider}/${user}`;
     const BuyerWindow = window.open(url, "_self");
     if (!BuyerWindow) {
       alert("Please allow popups for this website");
