@@ -118,7 +118,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
   return (
     <div
       className={clsxm(
-        "absolute flex flex-col justify-between items-center px-4 py-4 top-0 left-0 pt-28 -z-[100] w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out",
+        "absolute flex flex-col justify-between items-center px-4 py-4 top-0 left-0 pt-28 -z-[100] w-full h-screen bg-[#525B44] shadow-lg transform transition-all duration-200 ease-in-out overflow-scroll",
         open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0",
         className,
       )}
