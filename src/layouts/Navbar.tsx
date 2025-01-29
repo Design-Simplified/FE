@@ -301,14 +301,14 @@ const NavMobile: React.FC<NavMobileProps> = ({
                 <Typography
                   variant="p"
                   font="Lora"
-                  className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-sm text-white"
+                  className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
                 >
                   3
                 </Typography>
               </div>
               <NextImage
                 src="/navbar/Chat.svg"
-                alt="cart"
+                alt="chat"
                 width={24}
                 height={24}
                 imgClassName="w-auto h-auto"
@@ -318,11 +318,11 @@ const NavMobile: React.FC<NavMobileProps> = ({
         )}
 
         <div className="relative bottom-2">
-          <div className="top-3 absolute left-3">
+          <div className="top-3 absolute left-4">
             <Typography
               variant="p"
               font="Lora"
-              className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-sm text-white"
+              className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
             >
               3
             </Typography>
@@ -394,7 +394,7 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
               <Typography
                 variant="p"
                 font="Lora"
-                className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2 sm:text-[8px] md:text-[8px] text-white"
+                className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2  sm:text-[8px] md:text-[8px] text-white"
               >
                 3
               </Typography>
