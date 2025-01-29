@@ -227,6 +227,8 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
             <Button
               variant="white"
               className="flex w-full justify-center items-center  py-4 lg:py-7"
+              leftIcon={SearchIcon}
+              leftIconClassName="w-3 h-3"
               onClick={() => router.push("/explore-contents")}
             >
               <Typography
