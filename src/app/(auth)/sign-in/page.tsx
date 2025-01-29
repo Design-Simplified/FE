@@ -30,11 +30,10 @@ const buttonVariantObject = {
 
 export default function SignInPage() {
   const handleLogin = (user: string, provider: string) => {
-    // redirect to api endpoint for buyer
-    // https://api.beteam1genics.my.id/api/auth/{provider}/{state}
-    //local
-    //const url = `https://api.beteam1genics.my.id/api/auth/local/${provider}/${user}`;
-    const url = `https://api.beteam1genics.my.id/api/auth/${provider}/${user}`;
+    const url =
+      process.env.NEXT_PUBLIC_RUN_MODE === "development"
+        ? process.env.NEXT_PUBLIC_API_URL_DEV + `auth/local/${provider}/${user}`
+        : process.env.NEXT_PUBLIC_API_URL_PROD + `auth/${provider}/${user}`;
     const BuyerWindow = window.open(url, "_self");
     if (!BuyerWindow) {
       alert("Please allow popups for this website");
@@ -48,7 +47,7 @@ export default function SignInPage() {
   return (
     <Layout withFooter={false} withNavbar={false}>
       <main className="relative bg-none w-full m-0 flex min-h-screen items-center justify-center gap-4 p-2 lg:flex-row lg:px-8 lg:py-12 ">
-        <div className="flex flex-col min-h-[600px] sm:w-[35%] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
+        <div className="flex flex-col min-h-[400px] sm:w-[35%] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
           <div className="atas flex flex-col items-center gap-6">
             <div className="title flex flex-col items-start justify-center w-full lg:gap-2">
               <Typography
@@ -73,7 +72,7 @@ export default function SignInPage() {
                   <Button
                     key={variant}
                     variant="grey"
-                    className="flex w-full justify-center items-center py-2 sm:py-4"
+                    className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
                     onClick={() =>
                       handleLogin(changeRole ? "seller" : "buyer", variant)
                     }
@@ -107,7 +106,7 @@ export default function SignInPage() {
             </div>
             <Button
               variant="grey"
-              className="flex w-full justify-center items-center gap-2 py-2 sm:py-4"
+              className="flex w-full justify-center items-center gap-2 py-2 sm:py-4 rounded-sm sm:rounded-lg"
               onClick={() => setChangeRole(!changeRole)}
             >
               <NextImage
@@ -147,7 +146,7 @@ export default function SignInPage() {
                 >
                   Sign Up Instead
                 </Typography>
-                <IoArrowForward className="w-4 h-4" />
+                <IoArrowForward className="w-3 h-3" />
               </div>
             </div>
           </div>
