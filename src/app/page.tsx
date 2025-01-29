@@ -22,7 +22,7 @@ export default function Home() {
           alt="Robot"
           width={80}
           height={80}
-          className="sticky bottom-0 right-0 ml-auto mr-4 z-[1900] w-20 sm:w-32 sm:mr-8 sm:bottom-4 hover:transform hover:scale-110 transition-transform duration-300"
+          className="sticky ml-auto mr-1 z-[1900] bottom-5 right-5 h-[3rem] w-[3rem] hover:transform hover:scale-110 transition-transform duration-300"
           imgClassName="object-cover w-full"
         />
       </main>
