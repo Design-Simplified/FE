@@ -70,7 +70,7 @@ export default function SignUpPage() {
                   <Button
                     key={variant}
                     variant="grey"
-                    className="flex w-full justify-center items-center py-2 sm:py-4"
+                    className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
                     onClick={() =>
                       handleRegister(changeRole ? "seller" : "buyer", variant)
                     }
@@ -104,7 +104,7 @@ export default function SignUpPage() {
             </div>
             <Button
               variant="grey"
-              className="flex w-full justify-center items-center py-2 sm:py-4"
+              className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
               onClick={() => setChangeRole(!changeRole)}
             >
               <div className="flex justify-center items-center w-fit flex-row gap-2">
@@ -146,7 +146,7 @@ export default function SignUpPage() {
                 >
                   Sign In Instead
                 </Typography>
-                <IoArrowForward className="w-4 h-4" />
+                <IoArrowForward className="w-3 h-3" />
               </div>
             </div>
           </div>

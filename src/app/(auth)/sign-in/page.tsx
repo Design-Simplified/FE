@@ -72,7 +72,7 @@ export default function SignInPage() {
                   <Button
                     key={variant}
                     variant="grey"
-                    className="flex w-full justify-center items-center py-2 sm:py-4"
+                    className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
                     onClick={() =>
                       handleLogin(changeRole ? "seller" : "buyer", variant)
                     }
@@ -106,7 +106,7 @@ export default function SignInPage() {
             </div>
             <Button
               variant="grey"
-              className="flex w-full justify-center items-center gap-2 py-2 sm:py-4"
+              className="flex w-full justify-center items-center gap-2 py-2 sm:py-4 rounded-sm sm:rounded-lg"
               onClick={() => setChangeRole(!changeRole)}
             >
               <NextImage
@@ -146,7 +146,7 @@ export default function SignInPage() {
                 >
                   Sign Up Instead
                 </Typography>
-                <IoArrowForward className="w-4 h-4" />
+                <IoArrowForward className="w-3 h-3" />
               </div>
             </div>
           </div>
