@@ -45,7 +45,7 @@ export default function SignUpPage() {
   return (
     <Layout withFooter={false} withNavbar={false}>
       <main className="relative bg-none w-full m-0 flex min-h-screen items-center justify-center gap-4 p-2 lg:flex-row lg:px-8 lg:py-12">
-        <div className="flex flex-col  sm:w-[35%] min-h-[600px] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
+        <div className="flex flex-col  sm:w-[35%] min-h-[400px] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-10 px-6 rounded-lg justify-between gap-10 bg-white">
           <div className="atas flex flex-col items-center gap-6">
             <div className="title flex flex-col items-start justify-center w-full lg:gap-2">
               <Typography
