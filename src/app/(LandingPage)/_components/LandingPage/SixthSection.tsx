@@ -13,15 +13,15 @@ export default function SixthSection() {
         <div className="title w-full flex flex-col gap-5 lg:gap-9 sm:gap-6">
           <Typography
             font="Lora"
-            weight="bold"
-            className="text-lg text-center xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl"
+            weight="semibold"
+            className="text-lg text-[#393F2F] text-center xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl"
           >
             Get the Good Stuff ❤️
           </Typography>
           <Typography
             font="Lora"
             weight="medium"
-            className="text-xs text-center xl:text-2xl lg:text-xl md:text-lg sm:text-base"
+            className="text-xs text-[#393F2F] text-center xl:text-2xl lg:text-xl md:text-lg sm:text-base"
           >
             Stay in the loop with exclusive tips, insider deals, and the latest
             updates delivered straight to your inbox. Don’t miss out, subscribe
