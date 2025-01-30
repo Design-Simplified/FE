@@ -41,7 +41,7 @@ const data = [
 
 export default function SecondSection() {
   return (
-    <div className="background-gray w-full py-16 pt-64 sm:pt-0 sm:mt-0 mt-32 pb-20 px-5 flex flex-col sm:px-12 lg:px-16 sm:py-36 sm:flex-row gap-5 sm:gap-0 items-center justify-center">
+    <div className="bg-[#EBEBEB] w-full py-16 sm:pt-auto sm:mt-0 mt-64 min-[445px]:mt-96 pb-20 px-5 flex flex-col sm:px-12 lg:px-16 sm:py-12 lg:py-16 sm:flex-row gap-5 sm:gap-0 items-center justify-center">
       <div className="w-full flex flex-col gap-16 xl:gap-24 lg:gap-20 md:gap-16 sm:gap-12 justify-center items-center">
         <Typography
           font="Lora"
