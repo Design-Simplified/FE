@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 export default function FourthSection() {
   return (
     <>
-      <div className="relative w-full px-7 py-10 flex flex-col gap-16 sm:gap-20 md:gap-24 lg:gap-28 xl:gap-32 justify-center items-center bg-[#bfbfbfd1]">
+      <div className="relative w-full px-7 py-10 flex flex-col gap-16 sm:gap-20 md:gap-24 lg:gap-28 xl:gap-32 justify-center items-center background-gray">
         <div className="title flex flex-col gap-4 justify-center items-center max-w-[70%]">
           <Typography
             font="Lora"

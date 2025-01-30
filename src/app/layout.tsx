@@ -7,10 +7,13 @@ import { lora } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: {
-    default: "Nextjs Starter Template",
-    template: "%s | Nextjs Starter Template",
+    default:
+      "Design Simplified: The Definitive Game Changer in Buying and Selling Digital Contents",
+    template:
+      "%s | Design Simplified: The Definitive Game Changer in Buying and Selling Digital Contents",
   },
-  description: "Nextjs 14.2.1 + Tailwind CSS starter template",
+  description:
+    "Design Simplified is where creativity meets convenience. Browse, buy, or request custom pre-designed content effortlessly while our AI-powered search redefines how you discover digital content, no more endless scrolling, just smart, interactive exploration. Becoming a seller is just as easy, no approvals, no fees, just sign up and start earning. With a sleek, user-friendly interface, we make everything simple, because great design should never be complicated",
 };
 
 export default function RootLayout({
@@ -19,7 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
+      <head>
+        <link
+          rel="icon"
+          href="/images/navbar/DesignSimplified.svg"
+          sizes="any"
+        />
+      </head>
       <body className={clsxm("w-full", lora.className)}>
         <Providers>{children}</Providers>
       </body>

@@ -22,6 +22,7 @@ import {
 import getUser from "@/api/user/getUser";
 import { useRouter } from "next/navigation";
 import { SearchIcon } from "lucide-react";
+import { BsCart3 } from "react-icons/bs";
 
 interface NavMobileMenuProps {
   open: boolean;
@@ -67,8 +68,8 @@ const NavMenuList = [
     title: "Help Center",
     items: [
       {
-        title: "FAQ",
-        link: "/faq",
+        title: "Help Forum",
+        link: "/help-forum",
       },
       {
         title: "Contact Us",
@@ -77,7 +78,7 @@ const NavMenuList = [
     ],
   },
   {
-    title: "Package",
+    title: "Packages",
     items: [
       {
         title: "For Buyer",
@@ -233,8 +234,8 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
             >
               <Typography
                 variant="p"
-                font="Lora"
                 weight="semibold"
+                font="Lora"
                 className="text-[#525B44]"
               >
                 Explore Contents
@@ -245,12 +246,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
               className="flex w-full justify-center items-center  py-4 lg:py-7"
               onClick={() => router.push("/sign-in")}
             >
-              <Typography
-                variant="p"
-                font="Lora"
-                weight="semibold"
-                className="text-[#525B44]"
-              >
+              <Typography variant="p" font="Lora" className="text-[#525B44]">
                 Login
               </Typography>
             </Button>
@@ -259,12 +255,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
               className="flex w-full justify-center items-center  py-4 lg:py-7"
               onClick={() => router.push("/sign-up")}
             >
-              <Typography
-                variant="p"
-                font="Lora"
-                weight="semibold"
-                className="text-white"
-              >
+              <Typography variant="p" font="Lora" className="text-white">
                 Create Account
               </Typography>
             </Button>
@@ -299,7 +290,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         {Username !== null && (
           <>
             <div className="relative">
-              <div className="absolute -top-1.5 left-3">
+              <div className="absolute -top-3 left-4">
                 <Typography
                   variant="p"
                   font="Lora"
@@ -320,29 +311,16 @@ const NavMobile: React.FC<NavMobileProps> = ({
         )}
 
         <div className="relative bottom-2">
-          <div className="top-3 absolute left-4">
+          <div className="top-2 absolute left-2.5">
             <Typography
               variant="p"
               font="Lora"
-              className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
+              className="flex h-1 w-1.5 items-center justify-center rounded-full bg-[#525B44] p-2 text-[10px] text-white"
             >
               3
             </Typography>
           </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="white"
-            className="file: mt-4 h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-            />
-          </svg>
+          <BsCart3 className="file: mt-4 h-5 w-5 text-white" />
         </div>
         <Hamburger open={open} setOpen={setOpen} />
       </div>
@@ -373,18 +351,18 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
         <div className="exploreNcart flex flex-row gap-6 justify-center items-center">
           {Username && (
             <div className="relative">
-              <div className="absolute -top-1.5 left-3">
+              <div className="absolute -top-3 left-4">
                 <Typography
                   variant="p"
                   font="Lora"
-                  className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2 sm:text-[8px] md:text-[8px] text-white"
+                  className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2 sm:text-[12px] md:text-[12px] text-white"
                 >
                   3
                 </Typography>
               </div>
               <NextImage
                 src="/navbar/Chat.svg"
-                alt="cart"
+                alt="chat"
                 width={24}
                 height={24}
                 imgClassName="w-auto h-auto"
@@ -392,29 +370,17 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
             </div>
           )}
           <div className="cart relative bottom-2">
-            <div className="top-3 absolute left-5">
+            <div className="top-2.5 absolute left-3.5">
               <Typography
                 variant="p"
                 font="Lora"
-                className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2  sm:text-[8px] md:text-[8px] text-white"
+                className="flex h-2 w-2.5 items-center justify-center rounded-full bg-[#525B44] p-2 sm:text-[12px] md:text-[12px] text-white"
               >
                 3
               </Typography>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="white"
-              className="file: mt-4 h-7 w-7"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
+
+            <BsCart3 className="file: mt-4 h-6 w-6 text-white" />
           </div>
           <Button
             variant="white"
@@ -533,7 +499,6 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
               <UnstyledLink href={"/sign-up"}>
                 <Typography
                   font="Lora"
-                  weight="semibold"
                   className="text-white text-center sm:text-[10px] min-[664px]:text-xs lg:text-base hover:text-slate-200 hover:font-bold"
                 >
                   Create Account
@@ -543,7 +508,6 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
               <UnstyledLink href={"/sign-in"}>
                 <Typography
                   font="Lora"
-                  weight="semibold"
                   className="text-white sm:text-[10px] min-[664px]:text-xs lg:text-base  hover:text-slate-200 hover:font-bold"
                 >
                   Login

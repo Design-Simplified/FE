@@ -16,7 +16,7 @@ export default function FirstSection() {
           <Typography
             font="Lora"
             variant="h5"
-            weight="semibold"
+            weight="medium"
             className="text-[#525B44] text-sm sm:text-xs md:text-sm lg:text-xl xl:text-2xl"
           >
             +1500 Users Have Already Proven it
@@ -28,37 +28,35 @@ export default function FirstSection() {
           weight="bold"
           className="text-[26px]/8 sm:text-xl md:text-2xl lg:text-[32px]/[50px] xl:text-[45px]/[57px] text-black"
         >
-          The Definitive Game Changer in Buying and Selling Templates.
+          Design Simplified: The Definitive Game Changer in Buying and Selling
+          Digital Contents
         </Typography>
         <Typography
           font="Lora"
           variant="p"
-          weight="medium"
           className="text-slate-500 text-xs lg:text-lg xl:text-2xl sm:text-xs md:text-xs"
         >
           From discovering the perfect design to showcasing your creativity, we
-          redefine the game in buying and selling templates.
+          redefine the game in buying and selling templates
         </Typography>
         <div className="button flex flex-row gap-2">
           <Button variant="green" className="px-2 py-0.5 sm:px-4 sm:py-1">
             <Typography
               font="Lora"
               variant="p"
-              weight="semibold"
-              className="text-white text-[9px] md:text-sm lg:text-xl"
+              className="text-white text-[9px] md:text-sm lg:text-lg"
             >
               Explore Now
             </Typography>
           </Button>
           <Button
             variant="outline"
-            className="border px-2 py-0.5 border-black sm:px-4 sm:py-1"
+            className="border px-2 py-0.5 border-[#525B44] sm:px-4 sm:py-1"
           >
             <Typography
               font="Lora"
               variant="p"
-              weight="semibold"
-              className="text-black text-[9px] md:text-sm lg:text-xl"
+              className="text-[#525B44] text-[9px] md:text-sm lg:text-lg"
             >
               Start Selling
             </Typography>

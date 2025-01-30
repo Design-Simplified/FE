@@ -16,10 +16,10 @@ export default function FirstSection() {
           <Typography
             font="Lora"
             variant="h5"
-            weight="semibold"
+            weight="medium"
             className="text-[#525B44] text-sm sm:text-xs md:text-sm lg:text-xl xl:text-2xl"
           >
-            Over 1200 Sellers Are Growing Their Business Here!
+            Over 1200 Sellers Are Growing Their Business Here
           </Typography>
         </div>
         <Typography
@@ -28,12 +28,11 @@ export default function FirstSection() {
           weight="bold"
           className="text-[26px]/8 sm:text-xl md:text-2xl lg:text-[32px]/[50px] xl:text-[45px]/[57px] text-black"
         >
-          Start Selling Now For Completely Free
+          Start Selling Now For Completely Free!
         </Typography>
         <Typography
           font="Lora"
           variant="p"
-          weight="medium"
           className="text-slate-500 text-xs lg:text-lg xl:text-2xl sm:text-xs md:text-xs"
         >
           You can start selling with us whether you’re a seasoned professional
@@ -44,8 +43,7 @@ export default function FirstSection() {
             <Typography
               font="Lora"
               variant="p"
-              weight="semibold"
-              className="text-white text-[9px] md:text-sm lg:text-xl"
+              className="text-white text-[9px] md:text-sm lg:text-lg"
             >
               Get Started
             </Typography>
