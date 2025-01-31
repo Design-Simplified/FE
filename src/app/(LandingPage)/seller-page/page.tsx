@@ -1,10 +1,10 @@
 import NextImage from "@/components/NextImage";
 import Layout from "@/layouts/Layout";
-import FirstSection from "../_components/SellerPage/FirstSection";
-import SecondSection from "../_components/SellerPage/SecondSection";
-import ThirdSection from "../_components/SellerPage/ThirdSection";
-import FourthSection from "../_components/SellerPage/FourthSection";
-import FifthSection from "../_components/LandingPage/FifthSection";
+import FirstSection from "../_container/SellerPage/FirstSection";
+import SecondSection from "../_container/SellerPage/SecondSection";
+import ThirdSection from "../_container/SellerPage/ThirdSection";
+import FourthSection from "../_container/SellerPage/FourthSection";
+import FifthSection from "../_container/LandingPage/FifthSection";
 
 export default function SellerPage() {
   return (

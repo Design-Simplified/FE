@@ -1,11 +1,11 @@
 import Layout from "@/layouts/Layout";
-import FirstSection from "./(LandingPage)/_components/LandingPage/FirstSection";
-import SecondSection from "./(LandingPage)/_components/LandingPage/SecondSection";
+import FirstSection from "./(LandingPage)/_container/LandingPage/FirstSection";
+import SecondSection from "./(LandingPage)/_container/LandingPage/SecondSection";
 import NextImage from "@/components/NextImage";
-import ThirdSection from "./(LandingPage)/_components/LandingPage/ThirdSection";
-import FourthSection from "./(LandingPage)/_components/LandingPage/FourthSection";
-import FifthSection from "./(LandingPage)/_components/LandingPage/FifthSection";
-import SixthSection from "./(LandingPage)/_components/LandingPage/SixthSection";
+import ThirdSection from "./(LandingPage)/_container/LandingPage/ThirdSection";
+import FourthSection from "./(LandingPage)/_container/LandingPage/FourthSection";
+import FifthSection from "./(LandingPage)/_container/LandingPage/FifthSection";
+import SixthSection from "./(LandingPage)/_container/LandingPage/SixthSection";
 
 export default function Home() {
   return (
