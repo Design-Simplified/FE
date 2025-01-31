@@ -4,7 +4,7 @@ import Typography from "@/components/Typography";
 
 export default function FirstSection() {
   return (
-    <div className="bg-[#FFF] w-full py-10 pb-20 px-5 flex flex-col sm:px-16 lg:px-28 sm:py-36 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-24 sm:flex-row gap-5 sm:gap-0 items-center justify-center">
+    <div className="bg-[#FFF] w-full py-10 pb-20 px-5 flex flex-col sm:px-16 lg:px-28 sm:py-36 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-24 sm:flex-row gap-5 sm:gap-0 items-center justify-center sm:overflow-hidden">
       <div className="flex w-full flex-col gap-4 sm:gap-8	">
         <div className="Proven flex flex-row gap-2 sm:gap-4 items-center justify-start w-full">
           <NextImage
