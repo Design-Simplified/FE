@@ -499,6 +499,7 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
               <UnstyledLink href={"/sign-up"}>
                 <Typography
                   font="Lora"
+                  weight="semibold"
                   className="text-white text-center sm:text-[10px] min-[664px]:text-xs lg:text-base hover:text-slate-200 hover:font-bold"
                 >
                   Create Account
@@ -508,6 +509,7 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
               <UnstyledLink href={"/sign-in"}>
                 <Typography
                   font="Lora"
+                  weight="semibold"
                   className="text-white sm:text-[10px] min-[664px]:text-xs lg:text-base  hover:text-slate-200 hover:font-bold"
                 >
                   Login

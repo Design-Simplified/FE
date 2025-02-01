@@ -41,12 +41,12 @@ const data = [
 
 export default function SecondSection() {
   return (
-    <div className="background-gray w-full py-16 pt-64 sm:pt-0 sm:mt-0 mt-32 pb-20 px-5 flex flex-col sm:px-12 lg:px-16 sm:py-36 sm:flex-row gap-5 sm:gap-0 items-center justify-center">
+    <div className="bg-[#EBEBEB] w-full py-16 sm:pt-auto sm:mt-0 mt-64 min-[445px]:mt-96 pb-20 px-5 flex flex-col sm:px-12 lg:px-16 sm:py-12 lg:py-16 lg:pb-36 md:pb-28 sm:pb-24 sm:flex-row gap-5 sm:gap-0 items-center justify-center">
       <div className="w-full flex flex-col gap-16 xl:gap-24 lg:gap-20 md:gap-16 sm:gap-12 justify-center items-center">
         <Typography
           font="Lora"
           weight="bold"
-          className="text-xl lg:text-[45px]/[57px] text-black md:text-2xl sm:text-xl"
+          className="text-xl lg:text-[40px]/[51px] text-black md:text-4xl sm:text-3xl"
         >
           Why Sell With Us
         </Typography>
@@ -62,12 +62,14 @@ export default function SecondSection() {
                     src={item.image}
                     width={80}
                     height={80}
+                    className="xl:w-32 lg:w-28 md:w-24 sm:w-20"
+                    imgClassName="object-cover w-full"
                     alt={item.title}
                   />
                   <Typography
                     font="Lora"
                     weight="bold"
-                    className="text-[#525B44] text-base sm:text-sm md:text-lg lg:text-2xl xl:text-3xl text-center"
+                    className="text-[#000] text-base sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center"
                   >
                     {item.title}
                   </Typography>
@@ -75,7 +77,7 @@ export default function SecondSection() {
                 <Typography
                   font="Lora"
                   weight="regular"
-                  className="text-black text-xs xl:text-2xl lg:text-lg sm:text-xs md:text-xs text-center"
+                  className="text-black text-xs xl:text-xl lg:text-lg sm:text-xs md:text-xs text-center"
                 >
                   {item.description}
                 </Typography>
@@ -95,12 +97,14 @@ export default function SecondSection() {
                     src={item.image}
                     width={80}
                     height={80}
+                    className="xl:w-32 lg:w-28 md:w-24 sm:w-20"
+                    imgClassName="object-cover w-full"
                     alt={item.title}
                   />
                   <Typography
                     font="Lora"
                     weight="bold"
-                    className="text-[#525B44] text-base sm:text-sm md:text-lg lg:text-2xl xl:text-3xl text-center"
+                    className="text-[#000] text-base sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center"
                   >
                     {item.title}
                   </Typography>
