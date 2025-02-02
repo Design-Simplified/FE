@@ -10,9 +10,9 @@ const HowToStartSelling = [
   },
   {
     number: "02",
-    title: "Add an Niche and Sub-Niche",
+    title: "Add a Niche and Sub-Niche",
     description:
-      "Select one niche and sub-niche to start. Upgrade anytime to expand and sell in more niches and sub-niche!",
+      "Select one particular niche and sub-niche to start. You can add more later on",
   },
   {
     number: "03",
@@ -30,7 +30,7 @@ export default function ThirdSection() {
           <Typography
             font="Lora"
             weight="bold"
-            className="text-xl text-center text-white sm:text-[36px] md:text-[36px] lg:text-[40px]"
+            className="text-center text-white text-[20px]/7 sm:text-2xl md:text-3xl lg:text-[36px]/[48px] xl:text-[40px]/[52px]"
           >
             How To Start Selling
           </Typography>
@@ -50,7 +50,7 @@ export default function ThirdSection() {
                 </Typography>
                 <Typography
                   font="Lora"
-                  weight="bold"
+                  weight="semibold"
                   className="text-white text-base sm:text-base md:text-base xl:text-xl text-center"
                 >
                   {item.title}

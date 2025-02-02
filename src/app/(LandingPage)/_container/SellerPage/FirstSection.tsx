@@ -45,8 +45,8 @@ export default function FirstSection() {
             <Typography
               font="Lora"
               variant="p"
-              weight="semibold"
-              className="text-white text-[9px] sm:text-xs md:text-sm lg:text-xl xl:text-xl"
+              weight="medium"
+              className="text-white text-[9px] sm:text-xs md:text-sm lg:text-md xl:text-lg"
             >
               Get Started
             </Typography>

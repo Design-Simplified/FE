@@ -6,30 +6,30 @@ const data = [
     title: "No Manual Check",
     image: "/SellerPage/NoManualCheck.svg",
     description:
-      "Start selling right away, everyone has an equal opportunity to share their designs and make money.",
+      "Start selling right away without the need for manual content checks",
   },
   {
-    title: "Free Marketing Tools",
+    title: "Help Buyers - Grow Income",
     image: "/SellerPage/Rocket.svg",
     description:
-      "Boost traffic and sales with attractive discounts and free resources",
+      "Boost your earnings by crafting content that perfectly fits each buyer’s needs.",
   },
   {
     title: "Sales Tracker",
     image: "/SellerPage/Graphic.svg",
-    description: "Track your sales effortlessly with insightful analytics.",
+    description: "Track your sales effortlessly with insightful analytics",
   },
   {
     title: "Supportive Community",
     image: "/SellerPage/People.svg",
     description:
-      "Connect and grow together with  Design Simplified sellers. Gain access to seller tips, campaign updates, and more!",
+      "Connect and grow together with  Design Simplified sellers community",
   },
   {
     title: "Niche - based Categorization",
     image: "/SellerPage/Hand.svg",
     description:
-      "Categorize and manage your store effortlessly, keeping everything organized.",
+      "Categorize and manage your store effortlessly, keeping everything organized",
   },
   {
     title: "Gain Trust - Boost Sales",
@@ -46,7 +46,7 @@ export default function SecondSection() {
         <Typography
           font="Lora"
           weight="bold"
-          className="text-xl lg:text-[40px]/[51px] text-black md:text-4xl sm:text-3xl"
+          className=" text-black text-[20px]/7 sm:text-2xl md:text-3xl lg:text-[36px]/[48px] xl:text-[40px]/[52px] text-center"
         >
           Why Sell With Us
         </Typography>
@@ -60,16 +60,16 @@ export default function SecondSection() {
                 <div className="flex flex-col gap-5 items-center min-h-[100px] lg:min-h-[200px] justify-end">
                   <NextImage
                     src={item.image}
-                    width={80}
-                    height={80}
-                    className="xl:w-32 lg:w-28 md:w-24 sm:w-20"
+                    width={60}
+                    height={60}
+                    className="lg:w-20 md:w-16 sm:w-10"
                     imgClassName="object-cover w-full"
                     alt={item.title}
                   />
                   <Typography
                     font="Lora"
-                    weight="bold"
-                    className="text-[#000] text-base sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center"
+                    weight="semibold"
+                    className="text-[#000] text-base sm:text-xs md:text-sm lg:text-md xl:text-lg text-center"
                   >
                     {item.title}
                   </Typography>
@@ -77,7 +77,7 @@ export default function SecondSection() {
                 <Typography
                   font="Lora"
                   weight="regular"
-                  className="text-black text-xs xl:text-xl lg:text-lg sm:text-xs md:text-xs text-center"
+                  className="text-black text-xs xl:text-lg lg:text-md sm:text-xs md:text-sm text-center"
                 >
                   {item.description}
                 </Typography>
@@ -95,16 +95,16 @@ export default function SecondSection() {
                 <div className="flex flex-col gap-5 items-center min-h-[100px] lg:min-h-[200px] justify-end ">
                   <NextImage
                     src={item.image}
-                    width={80}
-                    height={80}
-                    className="xl:w-32 lg:w-28 md:w-24 sm:w-20"
+                    width={60}
+                    height={60}
+                    className="lg:w-20 md:w-16 sm:w-8"
                     imgClassName="object-cover w-full"
                     alt={item.title}
                   />
                   <Typography
                     font="Lora"
-                    weight="bold"
-                    className="text-[#000] text-base sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center"
+                    weight="semibold"
+                    className="text-[#000] text-base sm:text-xs md:text-sm lg:text-md xl:text-lg text-center"
                   >
                     {item.title}
                   </Typography>
@@ -112,7 +112,7 @@ export default function SecondSection() {
                 <Typography
                   font="Lora"
                   weight="regular"
-                  className="text-black text-xs xl:text-2xl lg:text-lg sm:text-xs md:text-xs text-center"
+                  className="text-black text-xs xl:text-lg lg:text-md sm:text-xs md:text-sm text-center"
                 >
                   {item.description}
                 </Typography>

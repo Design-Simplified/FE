@@ -24,11 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
-        <link
-          rel="icon"
-          href="/images/navbar/DesignSimplified.svg"
-          sizes="any"
-        />
+        <link rel="icon" href="/DesignSimplified.ico" />
       </head>
       <body className={clsxm("w-full", lora.className)}>
         <Providers>{children}</Providers>
