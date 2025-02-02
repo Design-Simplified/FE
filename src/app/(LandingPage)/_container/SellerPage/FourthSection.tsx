@@ -56,7 +56,7 @@ export default function FourthSection() {
         <Typography
           font="Lora"
           weight="bold"
-          className="text-black text-xl sm:text-2xl md:text-3xl lg:text-5xl text-center"
+          className="text-black text-[20px]/7 sm:text-2xl md:text-3xl lg:text-[36px]/[48px] xl:text-[40px]/[52px] text-center"
         >
           Maximize Your Store’s Potential With Strategic Plans
         </Typography>

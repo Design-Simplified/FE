@@ -246,7 +246,12 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
               className="flex w-full justify-center items-center  py-4 lg:py-7"
               onClick={() => router.push("/sign-in")}
             >
-              <Typography variant="p" font="Lora" className="text-[#525B44]">
+              <Typography
+                variant="p"
+                font="Lora"
+                weight="semibold"
+                className="text-[#525B44]"
+              >
                 Login
               </Typography>
             </Button>
@@ -255,7 +260,12 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
               className="flex w-full justify-center items-center  py-4 lg:py-7"
               onClick={() => router.push("/sign-up")}
             >
-              <Typography variant="p" font="Lora" className="text-white">
+              <Typography
+                variant="p"
+                font="Lora"
+                weight="semibold"
+                className="text-white"
+              >
                 Create Account
               </Typography>
             </Button>
