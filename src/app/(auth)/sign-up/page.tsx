@@ -3,10 +3,8 @@ import Button from "@/components/buttons/Button";
 import NextImage from "@/components/NextImage";
 import Typography from "@/components/Typography";
 import Layout from "@/layouts/Layout";
-import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { IoArrowForward } from "react-icons/io5";
-import EmailForm from "./container/EmailForm";
 import LoginWithEmail from "./container/LoginWithEmail";
 
 // make array for button variant that is google, facebook, apple and user ( user can choose if user are buyer or seller), if user choose buyer, user will be directed to sign up page, if user choose seller, user will be directed to sign up page for seller

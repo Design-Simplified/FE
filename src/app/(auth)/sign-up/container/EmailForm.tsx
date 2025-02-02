@@ -10,13 +10,18 @@ interface EmailForm {
   email: string;
 }
 
-export default function EmailForm() {
+export default function EmailForm({
+  setDoneEmail,
+}: {
+  setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
+}): JSX.Element {
   const methods = useForm<EmailForm>({
     mode: "onTouched",
   });
 
   const { handleSubmit } = methods;
   const onSubmit = (data: EmailForm) => {
+    setDoneEmail(true);
     console.log(data);
   };
 
@@ -41,6 +46,7 @@ export default function EmailForm() {
           }}
         />
         <Button
+          onClick={() => setDoneEmail(true)}
           type="submit"
           variant="green"
           className="w-full rounded-lg py-2"

@@ -47,9 +47,11 @@ export default function ResendButton() {
       variant="green"
       onClick={handleResend}
       disabled={timeLeft > 0}
-      className={`w-full text-white rounded ${
-        timeLeft > 0 ? "background-gray cursor-not-allowed" : "bg-[#525B44]"
-      }`}
+      className={`w-full text-white py-2 ${
+        timeLeft > 0
+          ? "background-gray cursor-not-allowed text-["
+          : "bg-[#525B44]"
+      } disabled:bg-[#D9D9D980] disabled:text-[#00000099] text-[10px] lg:text-[15px] md:text-xs`}
     >
       {timeLeft > 0 ? `Resend ${timeLeft}s` : "Resend Email"}
     </Button>
