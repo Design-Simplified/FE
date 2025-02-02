@@ -7,7 +7,7 @@ export default function ErrorMessage({ children }: { children: string }) {
         as="p"
         weight="regular"
         variant="p"
-        className="text-xs !leading-tight text-red-500"
+        className="text-[10px] !leading-tight text-red-500"
       >
         {children}
       </Typography>

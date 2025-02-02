@@ -22,6 +22,7 @@ export type InputProps = {
   leftIcon?: IconType;
   rightIconClassName?: string;
   leftIconClassName?: string;
+  labelClassName?: string;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export default function Input({
@@ -40,6 +41,7 @@ export default function Input({
   rightIconClassName,
   leftIconClassName,
   helperTextClassName,
+  labelClassName,
   ...rest
 }: InputProps) {
   const {
@@ -53,17 +55,20 @@ export default function Input({
   return (
     <div className="w-full space-y-2">
       {label && (
-        <LabelText required={validation?.required ? true : false}>
+        <LabelText
+          labelTextClasname={labelClassName}
+          required={validation?.required ? true : false}
+        >
           {label}
         </LabelText>
       )}
 
       <div className="relative flex w-full gap-0">
-        <div
-          className={clsxm(
-            "pointer-events-none absolute h-full w-full rounded-md border-gray-300 ring-1 ring-inset ring-gray-500",
-          )}
-        />
+        {/* <div
+					className={clsxm(
+						"pointer-events-none absolute h-full w-full rounded-md border-gray-300 ring-1 ring-inset ring-gray-500"
+					)}
+				/> */}
 
         {prefix && (
           <Typography
@@ -76,7 +81,7 @@ export default function Input({
 
         <div
           className={clsxm(
-            "relative w-full rounded-md",
+            "relative w-full rounded-md ",
             prefix && "rounded-l-md",
             suffix && "rounded-r-md",
           )}
@@ -104,13 +109,13 @@ export default function Input({
             readOnly={readOnly}
             disabled={readOnly}
             className={clsxm(
-              "h-full w-full rounded-md border border-gray-500 px-3 py-2.5 caret-gray-900",
+              "h-full w-full rounded-md border border-gray-500 px-3 py-2.5",
               [LeftIcon && "pl-9", RightIcon && "pr-9"],
-              "focus:outline-1 focus:outline-gray-900 focus:ring-inset",
+              "focus:outline-1 focus:outline-gray-500 focus:ring-inset",
               "bg-slate-50 text-sm",
-              "hover:ring-1 hover:ring-inset hover:ring-gray-900",
-              "placeholder:text-sm placeholder:text-gray-500",
-              "text-gray-900",
+              "hover:ring-1 hover:ring-inset hover:ring-gray-500",
+              "placeholder:text-[10px] placeholder:text-gray-500",
+              "text-black",
               readOnly && "cursor-not-allowed",
               error &&
                 "border-none ring-2 ring-inset ring-red-500 placeholder:text-gray-500 focus:ring-red-500",
@@ -128,7 +133,7 @@ export default function Input({
               className={clsxm(
                 "absolute bottom-0 right-0 h-full",
                 "flex items-center justify-center pr-2.5",
-                "text-lg text-gray-900 md:text-xl",
+                "text-lg text-gray-500 md:text-xl",
                 rightIconClassName,
               )}
             >
@@ -141,7 +146,7 @@ export default function Input({
               className={clsxm(
                 "absolute bottom-0 right-0 h-full",
                 "flex items-center justify-center pr-3",
-                "text-lg text-gray-900 md:text-xl",
+                "text-lg text-gray-500 md:text-xl",
                 rightIconClassName,
               )}
               onClick={() => setShowPassword(!showPassword)}
