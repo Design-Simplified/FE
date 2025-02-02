@@ -184,19 +184,19 @@ const LoginWithEmail = ({
   doneEmail: boolean;
 }) => {
   return (
-    <div className="flex flex-col w-[330px] sm:w-[35%] min-h-[300px] sm:min-h-[65vh] sm:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 bg-white">
-      <div className="title w-full flex flex-row gap-10 justify-start items-center">
+    <div className="flex flex-col w-[330px] sm:w-[35%] min-h-[300px] sm:min-h-[400px] sm:min-w-[400px] lg:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 sm:gap-14 bg-white">
+      <div className="title w-full flex flex-row gap-10 lg:gap-[70px] sm:gap-[40px] justify-start items-center">
         <Button
           onClick={() => setClickEmail(false)}
           variant="white"
           className="flex flex-row items-center shadow-none"
         >
-          <ArrowLeft size={9} strokeWidth={3} />
+          <ArrowLeft size={9} strokeWidth={3} className="sm:size-3" />
         </Button>
         <Typography
           font="Lora"
           weight="semibold"
-          className="text-black text-sm text-center"
+          className="text-black text-sm text-center xl:text-xl lg:text-lg md:text-lg sm:text-base"
         >
           Create Your Acccount
         </Typography>
@@ -204,7 +204,7 @@ const LoginWithEmail = ({
       <Typography
         font="Lora"
         weight="regular"
-        className="text-black text-[10px]"
+        className="text-black text-[10px] lg:text-base md:text-base sm:text-sm"
       >
         You’re creating a Design Simplified account with [example@gmail.com]
       </Typography>
