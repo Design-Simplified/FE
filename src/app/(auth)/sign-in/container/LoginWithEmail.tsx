@@ -14,7 +14,7 @@ export default function LoginWithEmail({
   doneEmail: boolean;
 }): JSX.Element {
   return (
-    <div className="flex flex-col w-[330px] sm:w-[35%] h-fit min-h-[300px] sm:min-h-[400px] sm:min-w-[400px] lg:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 sm:gap-14 bg-white">
+    <div className="flex flex-col w-[330px] sm:w-[35%] min-h-[300px] sm:min-h-[400px] sm:min-w-[400px] lg:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 sm:gap-14 bg-white">
       <div className="title w-full flex flex-row gap-10 lg:gap-[70px] sm:gap-[40px] justify-start items-center">
         <Button
           onClick={() => setClickEmail(false)}
@@ -33,7 +33,7 @@ export default function LoginWithEmail({
           weight="semibold"
           className="text-black text-sm text-center xl:text-xl lg:text-lg md:text-lg sm:text-base"
         >
-          {doneEmail === true ? "Verify Your Email" : "Create Your Account"}
+          {doneEmail === true ? "Verify Your Email" : "Continue With Email"}
         </Typography>
       </div>
       <Typography
@@ -43,9 +43,8 @@ export default function LoginWithEmail({
       >
         {doneEmail === true
           ? "We’ve sent a verification email to your email, please check your inbox."
-          : "You’re creating a Design Simplified account with [example@gmail.com]."}
+          : "We’ll verify your account and set up a new one for you if needed."}
       </Typography>
-
       {doneEmail === true ? (
         <>
           <div className="w-full flex flex-col gap-3 sm:gap-[18px] justify-center items-center">
