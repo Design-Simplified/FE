@@ -4,7 +4,7 @@ import FirstSection from "../_container/SellerPage/FirstSection";
 import SecondSection from "../_container/SellerPage/SecondSection";
 import ThirdSection from "../_container/SellerPage/ThirdSection";
 import FourthSection from "../_container/SellerPage/FourthSection";
-import FifthSection from "../_container/LandingPage/FifthSection";
+import FifthSection from "../_container/SellerPage/FifthSection";
 
 export default function SellerPage() {
   return (

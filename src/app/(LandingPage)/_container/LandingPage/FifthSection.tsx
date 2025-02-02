@@ -8,12 +8,12 @@ import {
 
 export default function FifthSection() {
   return (
-    <div className="relative w-full px-5 py-10 sm:px-24 sm:py-32">
-      <div className="isi flex flex-col gap-7 items-start justify-center w-full sm:gap-20">
+    <div className="relative w-full px-5 py-10 xl:px-24 xl:py-32 lg:py-28 md:py-24 sm:py-20 lg:px-20 md:px-16 sm:px-12">
+      <div className="isi flex flex-col gap-10 items-start justify-center w-full sm:gap-20">
         <Typography
           font="Lora"
           weight="bold"
-          className="text-xl text-center w-full sm:text-2xl md:text-3xl lg:text-[36px]/[48px] xl:text-[45px]/[57px]"
+          className="text-[15px] text-center w-full sm:text-2xl md:text-3xl lg:text-[36px]/[48px] xl:text-[45px]/[57px]"
         >
           Frequently Asked Questions
         </Typography>
@@ -24,11 +24,11 @@ export default function FifthSection() {
               value={`item-${index}`}
               className="w-full border-b border-slate-300"
             >
-              <AccordionTrigger className="text-black sm:my-4 md:my-5 lg:my-7 xl:my-9">
+              <AccordionTrigger className="text-black my-3.5 sm:my-4 md:my-5 lg:my-7 xl:my-9">
                 <Typography
                   font="Lora"
                   weight="regular"
-                  className="text-sm text-black sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] "
+                  className="text-[10px] text-black sm:text-sm md:text-base lg:text-lg xl:text-xl "
                 >
                   For Buyers - Find it. Customize it
                 </Typography>
@@ -38,7 +38,7 @@ export default function FifthSection() {
                   <Typography
                     font="Lora"
                     weight="regular"
-                    className="text-[#525B44] text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] hover:font-semibold"
+                    className="text-[10px] text-black sm:text-sm md:text-base lg:text-lg xl:text-xl "
                   >
                     YNTKTS
                   </Typography>
