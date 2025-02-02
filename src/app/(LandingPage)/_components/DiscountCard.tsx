@@ -29,7 +29,7 @@ export default function DiscountCard({
         <div className="absolute -top-[45px] md:-top-[50px] -left-[5px] bg-[#525B44] rounded-lg rounded-b-none px-5 py-3 ">
           <Typography
             font="Lora"
-            weight="regular"
+            weight="semibold"
             className="text-xs lg:text-xl text-white"
           >
             {promoText}
@@ -82,7 +82,7 @@ export default function DiscountCard({
                 <Typography
                   font="Lora"
                   weight="regular"
-                  className="text-black text-sm xl:text-2xl lg:text-xl md:text-lg"
+                  className="text-black text-sm xl:text-xl lg:text-lg md:text-md"
                 >
                   {feature}
                 </Typography>
