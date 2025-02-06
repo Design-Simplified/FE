@@ -1,5 +1,4 @@
 import Typography from "@/components/Typography";
-import { describe } from "node:test";
 
 const HowToStartSelling = [
   {

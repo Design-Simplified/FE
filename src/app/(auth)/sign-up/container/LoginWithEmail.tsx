@@ -8,10 +8,12 @@ export default function LoginWithEmail({
   setClickEmail,
   setDoneEmail,
   doneEmail,
+  state,
 }: {
   setClickEmail: React.Dispatch<React.SetStateAction<boolean>>;
   setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
   doneEmail: boolean;
+  state: string;
 }): JSX.Element {
   return (
     <div className="flex flex-col w-[330px] sm:w-[35%] h-fit min-h-[300px] sm:min-h-[400px] sm:min-w-[400px] lg:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 sm:gap-14 bg-white">
@@ -61,7 +63,7 @@ export default function LoginWithEmail({
           </div>
         </>
       ) : (
-        <EmailForm setDoneEmail={setDoneEmail} />
+        <EmailForm setDoneEmail={setDoneEmail} state={state} />
       )}
     </div>
   );

@@ -536,7 +536,6 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { getUserData } = getUser();
-  console.log(getUserData);
 
   useEffect(() => {
     if (open) {
