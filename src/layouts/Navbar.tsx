@@ -300,7 +300,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         {Username !== null && (
           <>
             <div className="relative">
-              <div className="absolute -top-3 left-4">
+              <div className="absolute -top-2 left-3">
                 <Typography
                   variant="p"
                   font="Lora"
@@ -325,7 +325,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
             <Typography
               variant="p"
               font="Lora"
-              className="flex h-1 w-1.5 items-center justify-center rounded-full bg-[#525B44] p-2 text-[10px] text-white"
+              className="flex h-1 w-1.5 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
             >
               3
             </Typography>
@@ -361,7 +361,7 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username }) => {
         <div className="exploreNcart flex flex-row gap-6 justify-center items-center">
           {Username && (
             <div className="relative">
-              <div className="absolute -top-3 left-4">
+              <div className="absolute -top-2 left-3">
                 <Typography
                   variant="p"
                   font="Lora"
