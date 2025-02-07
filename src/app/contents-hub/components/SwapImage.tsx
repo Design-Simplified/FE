@@ -1,7 +1,6 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import NextImage from "@/components/NextImage";
 import Button from "@/components/buttons/Button";
@@ -11,6 +10,8 @@ const images = ["/ContentsHub/swapImage.png", "/ContentsHub/swapImage.png"];
 export default function SwappableImage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = next, -1 = prev
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   // Fungsi untuk berpindah gambar manual
   const prevImage = () => {
@@ -36,8 +37,32 @@ export default function SwappableImage() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  // Handle swipe gesture
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe kiri (next image)
+      nextImage();
+    } else if (touchEnd - touchStart > 50) {
+      // Swipe kanan (prev image)
+      prevImage();
+    }
+  };
+
   return (
-    <div className="relative w-full mx-auto overflow-hidden grow">
+    <div
+      className="relative w-full h-full mx-auto overflow-hidden grow rounded-lg xl:min-w-[927px] min-h-[100px] min-[300px]:min-h-[150px] min-[390px]:min-h-[210px] min-[500px]:min-h-[240px] xl:min-h-[496px] lg:min-h-[448px] md:min-h-[380px] sm:min-h-[210px]"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={currentIndex}
@@ -45,11 +70,11 @@ export default function SwappableImage() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -direction * 100 }}
           transition={{ duration: 0.3 }}
-          className="w-full relative"
+          className="absolute w-full h-full top-0 left-0"
         >
           <NextImage
             src={images[currentIndex]}
-            className="w-full h-fit rounded-lg"
+            className="w-full h-full rounded-lg md:w-[140%] lg:w-[120%] xl:w-full"
             imgClassName="object-cover w-full"
             alt="Banner Image"
             width={368}
@@ -59,19 +84,21 @@ export default function SwappableImage() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Tombol Navigasi */}
+      {/* Tombol Navigasi (Desktop) */}
       <Button
+        variant="green"
         onClick={prevImage}
-        className="hidden sm:flex absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        className="hidden sm:flex absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full"
       >
-        <ChevronLeft />
+        <MdKeyboardArrowLeft color="white" size={35} />
       </Button>
 
       <Button
+        variant="green"
         onClick={nextImage}
-        className="hidden sm:flex absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        className="hidden sm:flex absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full"
       >
-        <ChevronRight />
+        <MdKeyboardArrowRight color="white" size={35} />
       </Button>
 
       {/* Pagination Dots */}
