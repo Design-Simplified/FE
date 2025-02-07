@@ -22,7 +22,6 @@ export default function EmailForm({
   const { handleSubmit } = methods;
   const onSubmit = (data: EmailForm) => {
     setDoneEmail(true);
-    console.log(data);
   };
 
   return (

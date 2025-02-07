@@ -39,7 +39,7 @@ export default function ResendButton() {
     setTimeLeft(RESEND_TIME);
 
     // TODO: Tambahkan logika kirim ulang email di sini
-    console.log("Resend email verification...");
+    // console.log("Resend email verification...");
   };
 
   return (

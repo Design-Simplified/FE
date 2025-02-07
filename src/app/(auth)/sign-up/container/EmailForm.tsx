@@ -5,24 +5,30 @@ import Button from "@/components/buttons/Button";
 import Input from "@/components/form/Input";
 import Typography from "@/components/Typography";
 import { REG_EMAIL } from "@/constants/regex";
+import { useEmailMutation } from "../../hooks/LoginEmail";
 
 interface EmailForm {
   email: string;
+  state: string;
 }
 
 export default function EmailForm({
   setDoneEmail,
+  state,
 }: {
   setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
+  state: string;
 }): JSX.Element {
   const methods = useForm<EmailForm>({
     mode: "onTouched",
   });
 
   const { handleSubmit } = methods;
-  const onSubmit = (data: EmailForm) => {
+  const { handleLoginEmail } = useEmailMutation();
+  const onSubmit = async (data: EmailForm) => {
+    data.state = state;
     setDoneEmail(true);
-    console.log(data);
+    await handleLoginEmail(data);
   };
 
   return (
