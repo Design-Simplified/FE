@@ -32,7 +32,7 @@ export default function SwappableImage() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
