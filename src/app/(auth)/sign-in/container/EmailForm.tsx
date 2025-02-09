@@ -5,23 +5,29 @@ import Button from "@/components/buttons/Button";
 import Input from "@/components/form/Input";
 import Typography from "@/components/Typography";
 import { REG_EMAIL } from "@/constants/regex";
-
-interface EmailForm {
-  email: string;
-}
+import { useEmailMutation } from "../../hooks/LoginEmail";
+import { IEmailForm } from "@/types/email";
 
 export default function EmailForm({
   setDoneEmail,
+  state,
+  setFormData,
 }: {
   setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
+  state: string;
+  setFormData: React.Dispatch<React.SetStateAction<IEmailForm>>;
 }): JSX.Element {
-  const methods = useForm<EmailForm>({
+  const methods = useForm<IEmailForm>({
     mode: "onTouched",
   });
 
   const { handleSubmit } = methods;
-  const onSubmit = (data: EmailForm) => {
+  const { handleLoginEmail } = useEmailMutation();
+  const onSubmit = async (data: IEmailForm) => {
+    data.state = state;
+    setFormData(data);
     setDoneEmail(true);
+    await handleLoginEmail(data);
   };
 
   return (
@@ -45,7 +51,6 @@ export default function EmailForm({
           }}
         />
         <Button
-          onClick={() => setDoneEmail(true)}
           type="submit"
           variant="green"
           className="w-full rounded-lg py-2"

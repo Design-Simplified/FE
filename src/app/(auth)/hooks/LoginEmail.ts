@@ -8,20 +8,8 @@ interface EmailFormRequest {
 }
 
 interface EmailFormResponse {
-  email: string;
-  state: string;
-  token: string;
-  user: {
-    id: number;
-    email: string;
-    username: string;
-    provider: string;
-    confirmed: boolean;
-    blocked: boolean;
-    role: number;
-    created_at: string;
-    updated_at: string;
-  };
+  resultCode: number;
+  resultMessage: string;
 }
 
 const url =
@@ -30,7 +18,11 @@ const url =
     : process.env.NEXT_PUBLIC_API_URL_PROD + `auth/email`;
 
 export const useEmailMutation = () => {
-  const { mutateAsync: handleLoginEmail, isPending } = useMutation<
+  const {
+    mutateAsync: handleLoginEmail,
+    isPending,
+    data: handleLoginData,
+  } = useMutation<
     AxiosResponse<ApiResponse<EmailFormResponse>>,
     AxiosError<ApiError>,
     EmailFormRequest
@@ -41,5 +33,5 @@ export const useEmailMutation = () => {
       return res;
     },
   });
-  return { handleLoginEmail, isPending };
+  return { handleLoginEmail, isPending, handleLoginData };
 };

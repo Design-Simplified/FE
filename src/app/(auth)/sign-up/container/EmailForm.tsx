@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
@@ -6,27 +7,26 @@ import Input from "@/components/form/Input";
 import Typography from "@/components/Typography";
 import { REG_EMAIL } from "@/constants/regex";
 import { useEmailMutation } from "../../hooks/LoginEmail";
-
-interface EmailForm {
-  email: string;
-  state: string;
-}
+import { IEmailForm } from "@/types/email";
 
 export default function EmailForm({
   setDoneEmail,
   state,
+  setFormData,
 }: {
   setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
   state: string;
+  setFormData: React.Dispatch<React.SetStateAction<IEmailForm>>;
 }): JSX.Element {
-  const methods = useForm<EmailForm>({
+  const methods = useForm<IEmailForm>({
     mode: "onTouched",
   });
 
   const { handleSubmit } = methods;
-  const { handleLoginEmail } = useEmailMutation();
-  const onSubmit = async (data: EmailForm) => {
+  const { handleLoginEmail, handleLoginData, isPending } = useEmailMutation();
+  const onSubmit = async (data: IEmailForm) => {
     data.state = state;
+    setFormData(data);
     setDoneEmail(true);
     await handleLoginEmail(data);
   };
@@ -52,7 +52,6 @@ export default function EmailForm({
           }}
         />
         <Button
-          onClick={() => setDoneEmail(true)}
           type="submit"
           variant="green"
           className="w-full rounded-lg py-2"

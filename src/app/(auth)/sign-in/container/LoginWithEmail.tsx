@@ -3,16 +3,24 @@ import Typography from "@/components/Typography";
 import { BsArrowLeft } from "react-icons/bs";
 import EmailForm from "./EmailForm";
 import ResendButton from "../../components/ResendButton";
+import { IEmailForm } from "@/types/email";
+import React from "react";
 
 export default function LoginWithEmail({
   setClickEmail,
   setDoneEmail,
   doneEmail,
+  state,
 }: {
   setClickEmail: React.Dispatch<React.SetStateAction<boolean>>;
   setDoneEmail: React.Dispatch<React.SetStateAction<boolean>>;
   doneEmail: boolean;
+  state: string;
 }): JSX.Element {
+  const [formData, setFormData] = React.useState<IEmailForm>({
+    email: "",
+    state: "",
+  });
   return (
     <div className="flex flex-col w-[330px] sm:w-[35%] min-h-[300px] sm:min-h-[400px] sm:min-w-[400px] lg:min-w-[450px] sm:px-12 sm:py-16 py-8 px-6 rounded-lg justify-start items-center gap-10 sm:gap-14 bg-white">
       <div className="title w-full flex flex-row gap-10 lg:gap-[70px] sm:gap-[40px] justify-start items-center">
@@ -56,11 +64,15 @@ export default function LoginWithEmail({
               Please check your email and click the verification link to
               proceed.
             </Typography>
-            <ResendButton />
+            <ResendButton formData={formData} />
           </div>
         </>
       ) : (
-        <EmailForm setDoneEmail={setDoneEmail} />
+        <EmailForm
+          setDoneEmail={setDoneEmail}
+          state={state}
+          setFormData={setFormData}
+        />
       )}
     </div>
   );
