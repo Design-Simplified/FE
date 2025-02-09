@@ -304,7 +304,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
                 <Typography
                   variant="p"
                   font="Lora"
-                  className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
+                  className="flex h-2 w-2 items-center justify-center rounded-full bg-[#525B44] p-2 text-[10px] text-white"
                 >
                   3
                 </Typography>
@@ -325,7 +325,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
             <Typography
               variant="p"
               font="Lora"
-              className="flex h-1 w-1.5 items-center justify-center rounded-full bg-[#525B44] p-2 text-[8px] text-white"
+              className="flex h-1 w-1.5 items-center justify-center rounded-full bg-[#525B44] p-2 text-[10px] text-white"
             >
               3
             </Typography>
