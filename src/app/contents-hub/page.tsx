@@ -3,6 +3,7 @@ import FirstSection from "./container/FirstSection";
 import SecondSection from "./container/SecondSection";
 import ThirdSection from "./container/ThirdSection";
 import FourthSection from "./container/FourthSection";
+import FifthSection from "./container/FifthSection";
 
 export default function ContentHubPage() {
   return (
@@ -12,6 +13,7 @@ export default function ContentHubPage() {
         <SecondSection />
         <ThirdSection />
         <FourthSection />
+        <FifthSection />
       </main>
     </Layout>
   );
