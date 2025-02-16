@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Button from "@/components/buttons/Button";
 import NextImage from "@/components/NextImage";
 import Typography from "@/components/Typography";
-import { IoOptionsSharp } from "react-icons/io5";
+import { IoClose, IoOptionsSharp } from "react-icons/io5";
 import {
   Pagination,
   PaginationContent,
@@ -68,6 +68,21 @@ export default function ThirdSection() {
 
   return (
     <section className="w-full relative background-gray px-3 xl:px-8 lg:px-6 md:px-4 pb-6 xl:pb-9 lg:pb-8 md:pb-7">
+      <div className="absolute bg-[#00000099] z-50 w-full h-full -left-0">
+        <div className="w-full flex flex-row items-start justify-end relative px-[26px] xl:px-[60px] lg:px-12 md:px-9 sm:px-7 pt-8 xl:pt-16 lg:pt-14 md:pt-12 sm:pt-10">
+          <div className="sm:w-[345px] sm:h-[1438px] bg-white relative rounded-xl flex flex-col">
+            <div className="w-full flex flex-col gap-7 items-start justify-center px-4 py-5"></div>
+          </div>
+          <Button variant="white" type="button" className="p-2 rounded-lg">
+            <IoClose
+              color="#525B44"
+              size={19}
+              className=" xl:size-8 lg:size-7 md:size-6 sm:size-5"
+              strokeWidth={2}
+            />
+          </Button>
+        </div>
+      </div>
       <div className="w-full flex flex-col lg:gap-20 md:gap-16 sm:gap-12 xl:gap-24 gap-8 pt-8 xl:pt-16 lg:pt-14 md:pt-12 sm:pt-10 px-3.5 xl:px-7 lg:px-6 md:px-5 sm:px-4 bg-white">
         <div className="w-full flex flex-row gap-4 justify-between items-center">
           <Typography
