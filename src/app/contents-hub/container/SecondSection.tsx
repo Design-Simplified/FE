@@ -49,7 +49,6 @@ export default function SecondSection() {
           {Image.map((img, index) => (
             <div
               key={index}
-              // className="w-full flex flex-col gap-1 items-center justify-center"
               className={clsxm(
                 "w-full relative shrink",
                 index === 3 && "hidden sm:block",

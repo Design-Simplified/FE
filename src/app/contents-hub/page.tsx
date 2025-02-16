@@ -5,6 +5,7 @@ import ThirdSection from "./container/ThirdSection";
 import FourthSection from "./container/FourthSection";
 import FifthSection from "./container/FifthSection";
 import SixthSection from "./container/SixthSection";
+import SeventhSection from "./container/SeventhSection";
 
 export default function ContentHubPage() {
   return (
@@ -16,6 +17,7 @@ export default function ContentHubPage() {
         <FourthSection />
         <FifthSection />
         <SixthSection />
+        <SeventhSection />
       </main>
     </Layout>
   );
