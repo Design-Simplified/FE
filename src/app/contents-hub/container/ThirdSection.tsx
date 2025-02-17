@@ -11,6 +11,7 @@ import {
   PaginationPrevious,
   PaginationNext,
 } from "@/components/Paginations";
+import Filters from "../components/Filters";
 
 const Images = [
   {
@@ -38,7 +39,7 @@ const Images = [
 export default function ThirdSection() {
   const [imagesPerPage, setImagesPerPage] = useState(16);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [openFilter, setOpenFilter] = useState(false);
   useEffect(() => {
     const updateImagesPerPage = () => {
       if (window.innerWidth >= 1024) {
@@ -68,21 +69,7 @@ export default function ThirdSection() {
 
   return (
     <section className="w-full relative background-gray px-3 xl:px-8 lg:px-6 md:px-4 pb-6 xl:pb-9 lg:pb-8 md:pb-7">
-      <div className="absolute bg-[#00000099] z-50 w-full h-full -left-0">
-        <div className="w-full flex flex-row items-start justify-end relative px-[26px] xl:px-[60px] lg:px-12 md:px-9 sm:px-7 pt-8 xl:pt-16 lg:pt-14 md:pt-12 sm:pt-10">
-          <div className="sm:w-[345px] sm:h-[1438px] bg-white relative rounded-xl flex flex-col">
-            <div className="w-full flex flex-col gap-7 items-start justify-center px-4 py-5"></div>
-          </div>
-          <Button variant="white" type="button" className="p-2 rounded-lg">
-            <IoClose
-              color="#525B44"
-              size={19}
-              className=" xl:size-8 lg:size-7 md:size-6 sm:size-5"
-              strokeWidth={2}
-            />
-          </Button>
-        </div>
-      </div>
+      {openFilter && <Filters setOpenFilter={setOpenFilter} />}
       <div className="w-full flex flex-col lg:gap-20 md:gap-16 sm:gap-12 xl:gap-24 gap-8 pt-8 xl:pt-16 lg:pt-14 md:pt-12 sm:pt-10 px-3.5 xl:px-7 lg:px-6 md:px-5 sm:px-4 bg-white">
         <div className="w-full flex flex-row gap-4 justify-between items-center">
           <Typography
@@ -92,7 +79,12 @@ export default function ThirdSection() {
           >
             Exclusively Chosen For You
           </Typography>
-          <Button variant="grey" type="button" className="p-2 rounded-lg">
+          <Button
+            variant="grey"
+            type="button"
+            className="p-2 rounded-lg"
+            onClick={() => setOpenFilter(true)}
+          >
             <IoOptionsSharp
               color="#525B44"
               size={19}

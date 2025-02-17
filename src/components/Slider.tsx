@@ -9,18 +9,27 @@ const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, ...props }, ref) => {
+  const [isDragging, setIsDragging] = React.useState(false);
+
   const [value, setValue] = React.useState(props.defaultValue || [50]);
   const thumbRef = React.useRef<HTMLSpanElement>(null);
   const [thumbPosition, setThumbPosition] = React.useState(0);
 
   const updateThumbPosition = () => {
     if (thumbRef.current) {
-      setThumbPosition(thumbRef.current.offsetLeft);
+      const parent = thumbRef.current.closest("div"); // Ambil parent terdekat (wrapper slider)
+      if (parent) {
+        const parentRect = parent.getBoundingClientRect();
+        const thumbRect = thumbRef.current.getBoundingClientRect();
+        setThumbPosition(
+          thumbRect.left - parentRect.left + thumbRect.width / 2,
+        );
+      }
     }
   };
 
   React.useEffect(() => {
-    updateThumbPosition();
+    requestAnimationFrame(updateThumbPosition);
   }, [value]);
 
   return (
@@ -29,10 +38,10 @@ const Slider = React.forwardRef<
         variant="p"
         font="Lora"
         weight="semibold"
-        className="absolute -top-6 left-0 transform -translate-x-1/2 text-sm font-medium"
+        className="absolute -top-10 left-0 transform -translate-x-1/2 text-sm font-medium"
         style={{ left: `${thumbPosition}px` }}
       >
-        {value[0]}
+        {"$" + value[0]}
       </Typography>
 
       <SliderPrimitive.Root
@@ -42,7 +51,22 @@ const Slider = React.forwardRef<
           className,
         )}
         value={value}
-        onValueChange={(newValue) => setValue(newValue)}
+        onValueChange={(newValue) => {
+          if (isDragging) {
+            // Hanya ubah value saat dragging
+            setValue(newValue);
+            updateThumbPosition();
+          }
+        }}
+        onPointerDown={() => setIsDragging(true)} // Mulai dragging
+        onPointerUp={() => setIsDragging(false)} // Selesai dragging
+        onPointerMove={(e) => {
+          if (isDragging) {
+            // Pastikan hanya update saat thumb di-drag
+            updateThumbPosition();
+          }
+        }}
+        onValueCommit={(newValue) => setValue(newValue)}
         {...props}
       >
         <SliderPrimitive.Track className="relative h-3 w-full grow overflow-hidden rounded-full bg-[#D9D9D9]">

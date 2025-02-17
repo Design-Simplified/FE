@@ -23,7 +23,7 @@ export default function EmailForm({
   });
 
   const { handleSubmit } = methods;
-  const { handleLoginEmail, handleLoginData, isPending } = useEmailMutation();
+  const { handleLoginEmail } = useEmailMutation();
   const onSubmit = async (data: IEmailForm) => {
     data.state = state;
     setFormData(data);

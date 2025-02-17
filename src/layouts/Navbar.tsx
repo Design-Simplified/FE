@@ -23,7 +23,6 @@ import getUser from "@/api/user/getUser";
 import { useRouter } from "next/navigation";
 import { SearchIcon } from "lucide-react";
 import { BsCart3 } from "react-icons/bs";
-import { baseURL } from "@/lib/api";
 
 interface NavMobileMenuProps {
   open: boolean;
