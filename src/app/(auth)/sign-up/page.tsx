@@ -69,6 +69,7 @@ const LoginWithButton = ({
             .filter((variant) => variant !== "buyer" && variant !== "seller")
             .map((variant: keyof typeof buttonVariantObject) => (
               <Button
+                type="button"
                 key={variant}
                 variant="grey"
                 className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
@@ -107,6 +108,7 @@ const LoginWithButton = ({
           <div className="w-full h-0 border border-[#BBBCBF]"></div>
         </div>
         <Button
+          type="button"
           variant="grey"
           className="flex w-full justify-center items-center py-2 sm:py-4 rounded-sm sm:rounded-lg"
           onClick={() => setChangeRole(!changeRole)}

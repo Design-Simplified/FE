@@ -1,14 +1,19 @@
 "use client";
 import Button from "@/components/buttons/Button";
 import { useEffect, useState } from "react";
+import { useEmailMutation } from "../hooks/LoginEmail";
 
 const RESEND_TIME = 60; // Durasi countdown dalam detik
 const STORAGE_KEY = "resend_expiry_time";
 const isBrowser = typeof window !== "undefined";
 
-export default function ResendButton() {
+export default function ResendButton({
+  formData,
+}: {
+  formData: { email: string; state: string };
+}) {
   const [timeLeft, setTimeLeft] = useState<number>(0);
-
+  const { handleLoginEmail } = useEmailMutation();
   useEffect(() => {
     // Cek apakah ada waktu expiry yang tersimpan di localStorage
     if (isBrowser) {
@@ -33,17 +38,17 @@ export default function ResendButton() {
     }
   }, [timeLeft]);
 
-  const handleResend = () => {
+  const handleResend = async () => {
     const expiryTime = Math.floor(Date.now() / 1000) + RESEND_TIME;
     if (isBrowser) localStorage.setItem(STORAGE_KEY, expiryTime.toString());
     setTimeLeft(RESEND_TIME);
 
-    // TODO: Tambahkan logika kirim ulang email di sini
-    // console.log("Resend email verification...");
+    await handleLoginEmail(formData);
   };
 
   return (
     <Button
+      type="button"
       variant="green"
       onClick={handleResend}
       disabled={timeLeft > 0}

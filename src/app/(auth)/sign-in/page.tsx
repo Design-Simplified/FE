@@ -202,6 +202,7 @@ export default function SignInPage() {
             setClickEmail={setClickEmail}
             setDoneEmail={setDoneEmail}
             doneEmail={doneEmail}
+            state={changeRole ? "seller" : "buyer"}
           />
         )}
         <section className="w-full h-full -z-[100] absolute top-0 bottom-0 right-0 min-h-screen overflow-hidden">
