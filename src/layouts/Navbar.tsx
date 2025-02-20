@@ -23,6 +23,8 @@ import getUser from "@/api/user/getUser";
 import { useRouter } from "next/navigation";
 import { SearchIcon } from "lucide-react";
 import { BsCart3 } from "react-icons/bs";
+import { User } from "@/types/users";
+import useUserStore from "../store/userStore";
 
 interface NavMobileMenuProps {
   open: boolean;
@@ -568,7 +570,18 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username, photoProfile }) => {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { getUserData } = getUser();
+  const { userData, setUserData } = useUserStore();
+  const { getUserData, refetch } = getUser();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const { data } = await refetch();
+      if (data) {
+        setUserData(data.data);
+      }
+    };
+    fetchUserData();
+  }, [getUserData, userData]);
 
   useEffect(() => {
     if (open) {
@@ -584,19 +597,19 @@ export default function Navbar() {
         <NavMobile
           open={open}
           setOpen={setOpen}
-          Username={getUserData?.data.username ?? null}
+          Username={userData?.username ?? null}
           className="sm:hidden"
         />
         <NavDesktop
-          Username={getUserData?.data.username ?? null}
-          photoProfile={getUserData?.data.photoProfile ?? null}
+          Username={userData?.username ?? null}
+          photoProfile={userData?.photoProfile ?? null}
         />
         <NavMobileMenu
           open={open}
-          Username={getUserData?.data.username ?? null}
-          Email={getUserData?.data.email ?? null}
+          Username={userData?.username ?? null}
+          Email={userData?.email ?? null}
           className="sm:hidden"
-          photoProfile={getUserData?.data.photoProfile ?? null}
+          photoProfile={userData?.photoProfile ?? null}
         />
       </section>
     </>

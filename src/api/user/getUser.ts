@@ -9,12 +9,14 @@ export default function getUser() {
     isLoading,
     isError,
     error,
+    refetch,
   } = useQuery<ApiResponse<User>, Error>({
     queryKey: ["user"],
     queryFn: async () => {
       const response = await api.get<ApiResponse<User>>("/users/me");
       return response.data;
     },
+    enabled: false,
   });
-  return { getUserData, isLoading, isError, error };
+  return { getUserData, isLoading, isError, error, refetch };
 }
