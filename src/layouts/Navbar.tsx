@@ -167,7 +167,10 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
         <>
           <div className="authenticated w-full flex flex-col gap-4 justify-center items-center">
             <div className="divider w-full h-0 border border-white"></div>
-            <div className="w-full flex flex-row gap-2 justify-start items-center">
+            <Button
+              onClick={() => router.push("/users-profile")}
+              className="w-full flex flex-row gap-2 justify-start items-center"
+            >
               {photoProfile ? (
                 <>
                   <NextImage
@@ -239,7 +242,7 @@ const NavMobileMenu: React.FC<NavMobileMenuProps> = ({
                   {Email}
                 </Typography>
               </div>
-            </div>
+            </Button>
           </div>
         </>
       ) : (
@@ -359,6 +362,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
 };
 
 const NavDesktop: React.FC<NavDesktopProps> = ({ Username, photoProfile }) => {
+  const router = useRouter();
   return (
     <>
       <div className="desktopatas hidden sm:flex flex-row justify-between items-center w-full">
@@ -474,7 +478,11 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username, photoProfile }) => {
         <div className="flex min-[862px]:flex-row sm:flex-col sm:gap-2 md:gap-4 justify-center items-center">
           {Username ? (
             <>
-              <div className="w-full flex sm:flex-col md:flex-row gap-2 justify-center items-center">
+              <Button
+                onClick={() => router.push("/users-profile")}
+                variant="green"
+                className="w-full flex sm:flex-col md:flex-row gap-2 justify-center items-center outline-none border-none"
+              >
                 <Typography
                   font="Lora"
                   weight="semibold"
@@ -537,7 +545,7 @@ const NavDesktop: React.FC<NavDesktopProps> = ({ Username, photoProfile }) => {
                     />
                   </svg>
                 )}
-              </div>
+              </Button>
             </>
           ) : (
             <>
