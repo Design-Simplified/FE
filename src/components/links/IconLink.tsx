@@ -10,9 +10,11 @@ const IconLinkVariant = [
   "blue",
   "green",
   "yellow",
+  "white",
   "red",
   "outline",
   "ghost",
+  "grey",
 ] as const;
 const IconLinkSize = ["xs", "sm", "base", "lg"] as const;
 
@@ -72,20 +74,19 @@ const IconLink = React.forwardRef<HTMLAnchorElement, IconLinkProps>(
               "focus-visible:ring-blue-400",
             ],
             variant === "green" && [
-              "bg-green-500 text-white",
-              "border border-green-600",
-              "hover:bg-green-600 hover:text-white",
-              "active:bg-green-700",
-              "disabled:bg-green-700",
-              "focus-visible:ring-green-400",
+              "bg-[#525B44] text-white",
+              "border border-[#414834]",
+              "hover:bg-[#414834] hover:text-white",
+              "active:bg-[#373d2b]",
+              "disabled:bg-[#373d2b]",
+              "focus-visible:ring-[#677155]",
             ],
-            variant === "red" && [
-              "bg-red-500 text-white",
-              "border border-red-600",
-              "hover:bg-red-600 hover:text-white",
-              "active:bg-red-700",
-              "disabled:bg-red-700",
-              "focus-visible:ring-red-400",
+            variant === "white" && [
+              "bg-white text-[#525B44]",
+              "hover:bg-slate-300 hover:text-[#687357]",
+              "active:bg-slate-400",
+              "disabled:bg-slate-400",
+              "focus-visible:ring-slate-500",
             ],
             variant === "yellow" && [
               "bg-yellow-500 text-white",
@@ -96,14 +97,21 @@ const IconLink = React.forwardRef<HTMLAnchorElement, IconLinkProps>(
               "focus-visible:ring-yellow-400",
             ],
             variant === "outline" && [
-              "text-black",
-              "border border-gray-300",
-              "hover:bg-slate-200 focus-visible:ring-gray-400 active:bg-slate-500 disabled:bg-slate-500",
+              "text-white",
+              "border border-white",
+              "hover:bg-inherit/80 focus-visible:ring-gray-400 active:bg-slate-500 disabled:bg-slate-500",
             ],
             variant === "ghost" && [
               "text-neutral-500",
               "shadow-none",
               "hover:bg-neutral-50 focus-visible:ring-neutral-400 active:bg-neutral-100 disabled:bg-neutral-100",
+            ],
+            variant === "grey" && [
+              "bg-[#FFFFFF] bg-[#D9D9D9B2]/50 text-black",
+              "hover:bg-gray-100 hover:text-black/50",
+              "active:bg-gray-700",
+              "disabled:bg-gray-700",
+              "focus-visible:ring-gray-400",
             ],
           ],
           //#endregion  //*======== Variants ===========
