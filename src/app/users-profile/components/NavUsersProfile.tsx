@@ -10,7 +10,7 @@ export default function NavUsersProfile({
   title: string;
 }) {
   return (
-    <nav className="w-full sticky top-0 bg-white flex flex-row gap-32 items-center justify-center py-4 xl:py-12 lg:py-10 md:py-8 sm:py-6 px-3 xl:px-11 lg:px-9 md:px-7 sm:px-5 z-[1000]">
+    <nav className="w-full absolute top-0 bg-white flex flex-row gap-32 items-center justify-center py-4 xl:py-12 lg:py-10 md:py-8 sm:py-6 px-3 xl:px-11 lg:px-9 md:px-7 sm:px-5 z-[1000]">
       <IconLink
         icon={MdKeyboardArrowLeft}
         variant="white"
