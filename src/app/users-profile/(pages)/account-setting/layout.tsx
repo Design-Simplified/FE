@@ -2,10 +2,10 @@ import { Metadata } from "next";
 import * as React from "react";
 
 export const metadata: Metadata = {
-  title: "User's Profile",
+  title: "Account Setting",
 };
 
-export default function MyProfileLayout({
+export default function AccountSettingLayout({
   children,
 }: {
   children: React.ReactNode;

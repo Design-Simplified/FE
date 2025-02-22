@@ -5,7 +5,7 @@ import { SlPencil } from "react-icons/sl";
 import Typography from "@/components/Typography";
 import NextImage from "@/components/NextImage";
 import useUserStore from "@/store/userStore";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import getUser from "@/api/user/getUser";
 import { useEffect } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -40,6 +40,7 @@ const AccountPage = [
 ];
 
 export default function MyProfilePages() {
+  const router = useRouter();
   const { userData } = useUserStore();
   const { getUserData, refetch } = getUser();
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function MyProfilePages() {
   else
     return (
       <>
-        <NavUsersProfile href="/" title="My Profile" />
+        <NavUsersProfile onClick={() => router.back()} title="My Profile" />
         <main className="w-full relative background-gray xl:pt-40 lg:pt-32 md:pt-28 sm:pt-20  pt-16 flex flex-col gap-2 xl:gap-6 lg:gap-5 md:gap-4 sm:gap-3 min-h-screen max-h-screen">
           <div className="w-full flex flex-row gap-10 justify-between items-center px-3 xl:px-8 lg:px-7 md:px-6 sm:px-5 py-4 xl:py-7 lg:py-6 md:py-5 bg-white">
             <div className="w-full flex flex-row gap-3 xl:gap-7 lg:gap-6 md:gap-5 sm:gap-4 justify-start items-center">
@@ -145,6 +146,7 @@ export default function MyProfilePages() {
               <>
                 <Button
                   key={index}
+                  onClick={() => router.push(item.href)}
                   variant="white"
                   className="w-full flex flex-row gap-10 justify-between items-center bg-white px-2 xl:px-7 lg:px-6 md:px-5 sm:px-4 lg:py-5 sm:py-4 py-3.5 group"
                 >
